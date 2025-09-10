@@ -1,0 +1,161 @@
+.
+├── README.md
+├── estrutura_mostra_cinema.txt
+├── next-env.d.ts
+├── next.config.ts
+├── node_modules
+│   ├── @alloc
+│   ├── @emnapi
+│   ├── @img
+│   ├── @isaacs
+│   ├── @jridgewell
+│   ├── @next
+│   ├── @nodelib
+│   ├── @pkgjs
+│   ├── @swc
+│   ├── @tailwindcss
+│   ├── @types
+│   ├── ansi-regex
+│   ├── ansi-styles
+│   ├── any-promise
+│   ├── anymatch
+│   ├── arg
+│   ├── autoprefixer
+│   ├── balanced-match
+│   ├── binary-extensions
+│   ├── brace-expansion
+│   ├── braces
+│   ├── browserslist
+│   ├── camelcase-css
+│   ├── caniuse-lite
+│   ├── chokidar
+│   ├── chownr
+│   ├── client-only
+│   ├── color
+│   ├── color-convert
+│   ├── color-name
+│   ├── color-string
+│   ├── commander
+│   ├── cross-spawn
+│   ├── cssesc
+│   ├── csstype
+│   ├── detect-libc
+│   ├── didyoumean
+│   ├── dlv
+│   ├── eastasianwidth
+│   ├── electron-to-chromium
+│   ├── emoji-regex
+│   ├── enhanced-resolve
+│   ├── escalade
+│   ├── fast-glob
+│   ├── fastq
+│   ├── fill-range
+│   ├── foreground-child
+│   ├── fraction.js
+│   ├── function-bind
+│   ├── glob
+│   ├── glob-parent
+│   ├── graceful-fs
+│   ├── hasown
+│   ├── is-arrayish
+│   ├── is-binary-path
+│   ├── is-core-module
+│   ├── is-extglob
+│   ├── is-fullwidth-code-point
+│   ├── is-glob
+│   ├── is-number
+│   ├── isexe
+│   ├── jackspeak
+│   ├── jiti
+│   ├── lightningcss
+│   ├── lightningcss-linux-x64-gnu
+│   ├── lightningcss-linux-x64-musl
+│   ├── lilconfig
+│   ├── lines-and-columns
+│   ├── lru-cache
+│   ├── magic-string
+│   ├── merge2
+│   ├── micromatch
+│   ├── minimatch
+│   ├── minipass
+│   ├── minizlib
+│   ├── mkdirp
+│   ├── mz
+│   ├── nanoid
+│   ├── next
+│   ├── node-releases
+│   ├── normalize-path
+│   ├── normalize-range
+│   ├── object-assign
+│   ├── object-hash
+│   ├── package-json-from-dist
+│   ├── path-key
+│   ├── path-parse
+│   ├── path-scurry
+│   ├── picocolors
+│   ├── picomatch
+│   ├── pify
+│   ├── pirates
+│   ├── postcss
+│   ├── postcss-import
+│   ├── postcss-js
+│   ├── postcss-nested
+│   ├── postcss-selector-parser
+│   ├── postcss-value-parser
+│   ├── queue-microtask
+│   ├── react
+│   ├── react-dom
+│   ├── read-cache
+│   ├── readdirp
+│   ├── resolve
+│   ├── reusify
+│   ├── run-parallel
+│   ├── scheduler
+│   ├── semver
+│   ├── sharp
+│   ├── shebang-command
+│   ├── shebang-regex
+│   ├── signal-exit
+│   ├── simple-swizzle
+│   ├── source-map-js
+│   ├── string-width
+│   ├── string-width-cjs
+│   ├── strip-ansi
+│   ├── strip-ansi-cjs
+│   ├── styled-jsx
+│   ├── sucrase
+│   ├── supports-preserve-symlinks-flag
+│   ├── tailwindcss
+│   ├── tapable
+│   ├── tar
+│   ├── thenify
+│   ├── thenify-all
+│   ├── to-regex-range
+│   ├── ts-interface-checker
+│   ├── tslib
+│   ├── typescript
+│   ├── undici-types
+│   ├── update-browserslist-db
+│   ├── util-deprecate
+│   ├── which
+│   ├── wrap-ansi
+│   ├── wrap-ansi-cjs
+│   ├── yallist
+│   └── yaml
+├── package-lock.json
+├── package.json
+├── pages
+│   └── index.js
+├── postcss.config.js
+├── postcss.config.mjs
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── styles
+├── tailwind.config.js
+└── tsconfig.json
+
+143 directories, 16 files
