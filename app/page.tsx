@@ -15,9 +15,9 @@ export default function HomePage() {
   return (
     <>
       {destaque ? <Hero film={destaque} /> : null}
-      <section className="mx-auto max-w-6xl px-4 py-12">
+      <section className="mx-auto max-w-screen-2xl px-4 py-12">
       <h2 className="mb-4 border-b border-zinc-300 pb-2 text-xl font-semibold">
-        Films in Focus
+        Filmes em Foco
       </h2>
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
