@@ -6,7 +6,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-zinc-200 bg-black backdrop-blur ">
       <div className="mx-auto flex max-w-6xl justify-between px-4 py-3">
         <Link href="/" className="text-xl text-white font-semibold tracking-tight">
-          Mostra<span className="opacity-70">·Cinema</span>
+          MOSTRA<span className="opacity-70">·CINEMA</span>
         </Link>
 
         <nav className="flex text-white items-center gap-5 text-sm">

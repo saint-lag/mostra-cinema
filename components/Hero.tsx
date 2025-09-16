@@ -9,7 +9,7 @@ export default function Hero({ film }: { film: Film }) {
     <section className="bg-white">
       {/* Imagem grande */}
       <div
-        className="h-[60vh] min-h-[420px] bg-cover bg-center"
+        className="h-[5vh] min-h-[420px] bg-cover bg-center"
         style={{ backgroundImage: `url(${bg})` }}
       />
 

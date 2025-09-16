@@ -29,7 +29,7 @@ colorScheme: 'light dark', }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className="h-full">
-      <body className="min-h-screen bg-white text-zinc-900 antialiased">
+      <body className="min-h-screen bg-white text-zinc-900 antialiased font-sans">
         <div className="flex min-h-screen flex-col">
           <Header />
 

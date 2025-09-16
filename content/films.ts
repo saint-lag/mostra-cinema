@@ -15,27 +15,27 @@ export type Film = {
   
   export const films: Film[] = [
     {
-      slug: "um-classico",
-      title: "Um Clássico",
+      slug: "queer",
+      title: "QUEER",
       year: 1979,
-      director: "Fulana de Tal",
+      director: "QUEER ",
       synopsis:
-        "Uma viagem poética através do tempo e memória, acompanhando a história de uma família.",
-      youtubeId: "dQw4w9WgXcQ",
-      tags: ["drama", "clássico"],
-      thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+        "Lee, a solitary American in Mexico City, falls for a beautiful, elusive former soldier. Journeying together into the jungle, Lee sees, for the first time, the possibility of an intimate and infinite love.",
+      youtubeId: "s18Cu1NqX78",
+      tags: ["drama", "lgbt"],
+      thumbnail: "https://img.youtube.com/vi/s18Cu1NqX78/hqdefault.jpg",
       screeningAt: "2025-09-05T19:30:00-03:00",
     },
     {
-      slug: "documentario-raro",
-      title: "Documentário Raro",
+      slug: "megalopolis",
+      title: "MEGALOPOLIS ",
       year: 2003,
-      director: "Ciclano",
+      director: "Francis Ford Coppola",
       synopsis:
-        "Registro histórico de um movimento cultural esquecido, com imagens inéditas.",
-      youtubeId: "9bZkp7q19f0",
-      tags: ["documentário"],
-      thumbnail: "https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg",
+        "Francis Ford Coppola’s passion project, 40 years in the making, follows an upstart architect dreaming of turning the Big Apple into a utopia. This spectacular sci-fi opus is a work of extraordinary vision and ambition, featuring an all-star cast including Adam Driver, Aubrey Plaza, Laurence Fishburne, Giancarlo Esposito and Jason Schwartzman.",
+      youtubeId: "WVZd5b--U6w",
+      tags: ["sci-fi"],
+      thumbnail: "https://img.youtube.com/vi/WVZd5b--U6w/hqdefault.jpg",
       screeningAt: "2025-09-06T18:00:00-03:00",
     },
   ];
