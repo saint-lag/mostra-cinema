@@ -11,9 +11,8 @@ export default function Header() {
 
         <nav className="flex text-white items-center gap-5 text-sm">
           <Link href="/" className="hover:underline">INÍCIO</Link>
-          <Link href="/filmes" className="hover:underline">PROGRAMAÇÃO</Link>
+          <Link href="/programa" className="hover:underline">PROGRAMAÇÃO</Link>
           <Link href="/sobre" className="hover:underline">SOBRE</Link>
-          {/* Sem login */}
         </nav>
       </div>
     </header>

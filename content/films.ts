@@ -19,7 +19,7 @@ export type Film = {
       slug: "queer",
       title: "QUEER",
       year: 2025,
-      director: "QUEER ",
+      director: "Luca Guadagnino ",
       synopsis:
         "Lee, a solitary American in Mexico City, falls for a beautiful, elusive former soldier. Journeying together into the jungle, Lee sees, for the first time, the possibility of an intimate and infinite love.",
       youtubeId: "s18Cu1NqX78",
@@ -27,6 +27,44 @@ export type Film = {
       thumbnailB: "https://images.squarespace-cdn.com/content/v1/60455d6a513f6b5c4dccdb4c/a7e00972-f8a9-4b36-b1b5-6fedef30e0a4/queer.jpg",
       thumbnail: "https://img.youtube.com/vi/s18Cu1NqX78/hqdefault.jpg",
       screeningAt: "2025-09-05T19:30:00-03:00",
+    },
+    {
+      slug: "bleu",
+      title: "Trois Couleurs : Bleu",
+      year: 1993,
+      director: "Krzysztof Kieślowski ",
+      synopsis:
+        "After Julie loses her daughter and her husband, a famous composer, in a car accident, she tries to remove herself from the world around her. But life and music brings her back and heals her.",
+      youtubeId: "cVaqLZmMf-k",
+      tags: ["drama"],
+      thumbnailB: "",
+      thumbnail: "https://assets.mubicdn.net/images/film/414/image-w1280.jpg?1745490957",
+      screeningAt: "",
+    },
+    {
+      slug: "blanc",
+      title: "Trois coleurs : Blanc",
+      year: 1994,
+      director: "Krzysztof Kieślowski ",
+      synopsis:
+        "After getting divorced and losing his job, along with his legal residency in France, a Polish immigrant begins to rebuild his life while plotting an elaborate revenge scheme against his former wife.",
+      youtubeId: "xECEAPfdqic",
+      tags: ["comedy", "romance"],
+      thumbnailB: "",
+      thumbnail: "https://assets.mubicdn.net/images/film/413/image-w1280.jpg?1745490867",
+      screeningAt: "",
+    },
+    {
+      slug: "rouge",
+      title: "Trois Couleurs : Rouge ",
+      year: 1994,
+      director: "Krzysztof Kieślowski",
+      synopsis:
+        "Red explores relationships between Valentine, a model who almost runs over a dog, a retired judge who spies on his neighbours' and a few others who are unaware of how they're connected to all of this.",
+      youtubeId: "h8NU3EYTbFg",
+      tags: ["drama"],
+      thumbnail: "https://images.mubicdn.net/images/film/412/cache-47312-1745490939/image-w1280.jpg?size=800x",
+      screeningAt: "",
     },
     {
       slug: "megalopolis",
@@ -39,6 +77,7 @@ export type Film = {
       tags: ["sci-fi"],
       thumbnail: "https://img.youtube.com/vi/WVZd5b--U6w/hqdefault.jpg",
       screeningAt: "2025-09-06T18:00:00-03:00",
-    },
+    }
+    
   ];
   

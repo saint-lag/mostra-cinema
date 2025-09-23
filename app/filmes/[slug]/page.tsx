@@ -36,7 +36,7 @@ export default function FilmPage({ params }: Props) {
       <div className="mt-4 grid gap-8 md:grid-cols-3">
         {/* Coluna principal: player / imagem */}
         <div className="md:col-span-2">
-          <div className="rounded-2xl bg-zinc-100 p-2 dark:bg-zinc-900">
+          <div className="rounded-2xl bg-zinc-200 p-2 dark:bg-zinc-900">
             <VideoEmbed youtubeId={film.youtubeId} title={film.title} />
           </div>
           {film.synopsis ? (
@@ -51,21 +51,21 @@ export default function FilmPage({ params }: Props) {
         <aside className="space-y-4">
           <div className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
             <h1 className="text-2xl font-bold">{film.title}</h1>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+            <p className="mt-1 text-sm text-zinc-900 dark:text-zinc-800">
               {film.year ? `${film.year} • ` : ""}
               {film.director ? `Direção: ${film.director}` : ""}
             </p>
             {film.tags?.length ? (
               <div className="mt-3 flex flex-wrap gap-2">
                 {film.tags.map((t) => (
-                  <span key={t} className="rounded-full border border-zinc-200 px-3 py-1 text-xs dark:border-zinc-800">
+                  <span key={t} className="rounded-full border border-zinc-900 px-3 py-1 text-xs dark:border-zinc-800">
                     {t}
                   </span>
                 ))}
               </div>
             ) : null}
             {film.screeningAt ? (
-              <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-900">
                 Exibição: {new Date(film.screeningAt).toLocaleString("pt-BR")}
               </p>
             ) : null}
