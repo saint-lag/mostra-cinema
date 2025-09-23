@@ -62,7 +62,7 @@ export type Film = {
       synopsis:
         "Red explores relationships between Valentine, a model who almost runs over a dog, a retired judge who spies on his neighbours' and a few others who are unaware of how they're connected to all of this.",
       youtubeId: "h8NU3EYTbFg",
-      tags: ["drama"],
+      tags: ["romance", "mistery"],
       thumbnail: "https://images.mubicdn.net/images/film/412/cache-47312-1745490939/image-w1280.jpg?size=800x",
       screeningAt: "",
     },
