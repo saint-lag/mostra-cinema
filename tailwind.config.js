@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'light-green': 'var(--light-green)',
+        'musk-green': 'var(--musk-green)'
+      },
       fontFamily: {
         sans: ["Futura PT","Arial","sans-serif"],
       }

@@ -44,9 +44,11 @@
   font-display: swap;
 }
 
-
-
-
 body {
   font-family: "Futura PT", Arial, sans-serif;
+}
+
+:root {
+  --light-green: #e1ffe2;
+  --musk-green: #7e8e20;
 }

@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="bg-white">
       {/* Imagem grande */}
       <div
-        className="min-h-[420px] bg-cover bg-no-repeat min-h-[120vh]"
+        className="min-h-[420px] bg-cover bg-no-repeat min-h-[110vh]"
         style={{ backgroundImage: "url('/img/foto_perfil.svg')", backgroundPosition: "center" }}
       />
 

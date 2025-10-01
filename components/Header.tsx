@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Header() {
   const bg = '/public/img/Logo_2.svg'
   return (
-    <header className=" sticky top-0 z-40 items-center justify-center border-zinc-200 bg-black backdrop-blur ">
+    <header className=" sticky top-0 z-40 items-center justify-center border-zinc-300 bg-musk-green backdrop-blur ">
       <div className="min-h-[12vh] mx-auto flex max-w-6xl justify-between px-4 py-3">
         <Link href="/" className="flex items-center tracking-tight">
           <Image
