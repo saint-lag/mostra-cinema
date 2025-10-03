@@ -14,11 +14,11 @@ export default function HomePage() {
   return (
     <>
       <section className="mx-auto max-w-screen-2xl px-4 py-12">
-      <h2 className="mb-4 border-b border-zinc-300 pb-2 text-xl font-semibold">
+      <h2 className="px-4 mb-4 border-b border-zinc-300 pb-2 text-xl font-semibold">
         Catálogo
       </h2>
 
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+      <div className="px-4 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
         {films.map((film) => (
           <FilmCard key={film.slug} film={film} />
         ))}

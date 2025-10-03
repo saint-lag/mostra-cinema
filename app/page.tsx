@@ -14,14 +14,13 @@ export default function HomePage() {
   const destaque = films[0];
   return (
     <>
-      <Hero />
-      {/* {destaque ? <Hero /> : null} */}
-      <section className="mx-auto max-w-screen-2xl px-4 py-12">
-      <h2 className="mb-4 border-b border-zinc-300 pb-2 text-xl font-semibold">
+      {destaque ? <Hero film={destaque}/> : null}
+      <section className="mx-auto max-w-screen-2xl px-4 py-4">
+      <h2 className="mb-4 border-b border-zinc-300 pb-2 px-5 text-xl font-semibold">
         Filmes em Foco
       </h2>
 
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-5 px-5 sm:grid-cols-3 md:grid-cols-4">
         {films.map((film) => (
           <FilmCard key={film.slug} film={film} />
         ))}

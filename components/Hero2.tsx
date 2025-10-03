@@ -1,22 +1,20 @@
 import Link from "next/link";
 import { Film } from "@/content/films";
 
-export default function HeroProg({ film }: { film: Film }) {
-  const bg =
-    film.thumbnailB ?? `https://img.youtube.com/vi/${film.youtubeId}/hqdefault.jpg`;
+export default function Hero() {
+  const bg = `public/img/foto_perfil.svg`;
 
   return (
     <section className="bg-white">
       {/* Imagem grande */}
       <div
-        className="h-[5vh] min-h-[420px] bg-cover "
-        style={{ backgroundImage: `url(${bg})` }}
+        className="min-h-[30vh] bg-[url('/img/foto_perfil.svg')] bg-center sm:min-h-[130vh] bg-cover bg-no-repeat"
       />
 
       {/* Bloco branco com título e ficha */}
       <div className="mx-auto max-w-screen-2xl px-4 py-10">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
+          {/* <div>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 md:text-5xl">
               {film.title}
             </h1>
@@ -32,8 +30,8 @@ export default function HeroProg({ film }: { film: Film }) {
             className="rounded border border-zinc-400 px-4 py-2 text-sm font-medium hover:bg-zinc-100"
           >
             ▶ Assista
-          </Link>
-        </div>
+          </Link>*/}
+        </div> 
       </div>
     </section>
   );
