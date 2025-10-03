@@ -14,7 +14,6 @@ export default function HomePage() {
   const destaque = films[0];
   return (
     <>
-      {destaque ? <Hero film={destaque} /> : null}
       <section className="mx-auto max-w-screen-2xl px-4 py-12">
       <h2 className="mb-4 border-b border-zinc-300 pb-2 text-xl font-semibold">
         Filmes em Foco
