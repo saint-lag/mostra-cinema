@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'light-green': 'var(--light-green)',
-        'musk-green': 'var(--musk-green)'
+        'terra': "#bb5b2b",
+        'musgo': "#425a12",
+        'lima': "#afbd8d",
+        'cipo': "#7e8e20",
+        'bebe': "#e1ffe2"
       },
       fontFamily: {
-        sans: ["Futura PT","Arial","sans-serif"],
+        sans: ["var(--font-muro)", "system-ui", "sans-serif"],
       }
     },
   },

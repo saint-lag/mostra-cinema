@@ -18,34 +18,19 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
 
-@font-face {
-  font-family: "Futura PT";
-  src: url("/fonts/FuturaPt/fonnts.com-Futura_PT_Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+  :root {
+    --font-muro: 'Muro Regular', system-ui, sans-serif;
+  }
 
-@font-face {
-  font-family: "Futura PT";
-  src: url("/fonts/FuturaPt/fonnts.com-Futura_PT_Light.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Futura PT";
-  src: url("/fonts/FuturaPt/fonnts.com-Futura_PT_Medium.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-body {
-  font-family: "Futura PT", Arial, sans-serif;
+  /* Cores da identidade visual */
+  :root {
+    --terra: #bb5b2b;
+    --musgo: #425a12;
+    --lima: #afbd8d;
+    --cipo: #7e8e20;
+    --bebe: #e1ffe2;
+  }
 }
 
 :root {
