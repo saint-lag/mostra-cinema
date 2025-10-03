@@ -1,40 +1,69 @@
 // app/layout.tsx
 export const runtime = 'nodejs';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// Carregando a fonte Muro localmente
+const muro = localFont({
+  src: [
+    {
+      path: '../public/fonts/FuturaPt/fonnts.com-Futura_PT_Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FuturaPt/fonnts.com-Futura_PT_Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FuturaPt/fonnts.com-Futura_PT_Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-muro',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Mostra de Cinema",
+  title: {
+    template: '%s | Mostra de Cinema',
+    default: 'Mostra de Cinema',
+  },
   description: "Seleção de filmes exibidos via YouTube.",
   openGraph: {
     title: "Mostra de Cinema",
     description: "Seleção de filmes exibidos via YouTube.",
     type: "website",
-    url: "https://example.com", // ajuste se já tiver domínio
+    url: "https://exemplo.com.br",
+    siteName: "Mostra de Cinema",
+    locale: "pt_BR",
   },
   robots: { index: true, follow: true },
 };
 
-export const viewport = { width: "device-width", initialScale: 1, maximumScale: 1, themeColor: [
-  { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-  { media: '(prefers-color-scheme: dark)',  color: '#000000' },
-],
-colorScheme: 'light dark', }
+export const viewport = { 
+  width: "device-width", 
+  initialScale: 1, 
+  maximumScale: 1, 
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#e1ffe2' },
+    { media: '(prefers-color-scheme: dark)', color: '#425a12' },
+  ],
+  colorScheme: 'light' 
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className="h-full">
-      <body className="min-h-screen bg-white text-zinc-900 antialiased font-sans">
+    <html lang="pt-BR" className={`h-full ${muro.variable}`}>
+      <body className="min-h-screen bg-white text-musgo antialiased font-sans">
         <div className="flex min-h-screen flex-col">
           <Header />
-
           <main className="flex-1">{children}</main>
-
           <Footer />
         </div>
       </body>

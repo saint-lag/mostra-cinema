@@ -1,81 +1,103 @@
 export type Film = {
     slug: string;
-    title: string;
-    year?: number;
-    director?: string;
-    synopsis?: string;
+    titulo: string;
+    diretores?: string;
+    pais?: string;
+    ano?: number;
+    duracao?: string;
+    sinopse?: string;
+    imagem?: string;
+    classificacao?: string;
+    tags?: string[];
     // ID do vídeo no YouTube (ex: https://www.youtube.com/watch?v=VIDEO_ID)
     youtubeId: string;
-    // tags/mostra/programação, se quiser exibir filtros depois
-    tags?: string[];
     // opcional: data/hora de exibição
     screeningAt?: string; // ISO string
-    thumbnail?: string;   // opcional: capa (usada na listagem)
-    thumbnailB?: string; // Big 
+  };
+  
+export type Session = {
+    data: string; // ISO string
+    hora: string;
+    sala: string;
+    filmeSlug: string;
+    tipo: 'mostra' | 'competicao';
+    idioma: 'legendado' | 'dublado';
   };
   
   export const films: Film[] = [
     {
       slug: "queer",
-      title: "QUEER",
-      year: 2025,
-      director: "Luca Guadagnino ",
-      synopsis:
-        "Lee, a solitary American in Mexico City, falls for a beautiful, elusive former soldier. Journeying together into the jungle, Lee sees, for the first time, the possibility of an intimate and infinite love.",
+      titulo: "QUEER",
+      ano: 2025,
+      diretores: "Luca Guadagnino",
+      pais: "EUA",
+      duracao: "131 min",
+      sinopse:
+        "Lee, um americano solitário na Cidade do México, se apaixona por um ex-soldado belo e elusivo. Viajando juntos pela selva, Lee vê, pela primeira vez, a possibilidade de um amor íntimo e infinito.",
       youtubeId: "s18Cu1NqX78",
       tags: ["drama", "lgbt"],
-      thumbnailB: "https://images.squarespace-cdn.com/content/v1/60455d6a513f6b5c4dccdb4c/a7e00972-f8a9-4b36-b1b5-6fedef30e0a4/queer.jpg",
-      thumbnail: "https://img.youtube.com/vi/s18Cu1NqX78/hqdefault.jpg",
+      imagem: "https://img.youtube.com/vi/s18Cu1NqX78/hqdefault.jpg",
+      classificacao: "18",
       screeningAt: "2025-09-05T19:30:00-03:00",
     },
     {
       slug: "bleu",
-      title: "Trois Couleurs : Bleu",
-      year: 1993,
-      director: "Krzysztof Kieślowski ",
-      synopsis:
-        "After Julie loses her daughter and her husband, a famous composer, in a car accident, she tries to remove herself from the world around her. But life and music brings her back and heals her.",
+      titulo: "Três Cores: Azul",
+      ano: 1993,
+      diretores: "Krzysztof Kieślowski",
+      pais: "França",
+      duracao: "98 min",
+      sinopse:
+        "Após Julie perder sua filha e seu marido, um famoso compositor, em um acidente de carro, ela tenta se afastar do mundo ao seu redor. Mas a vida e a música a trazem de volta e a curam.",
       youtubeId: "cVaqLZmMf-k",
       tags: ["drama"],
-      thumbnailB: "",
-      thumbnail: "https://assets.mubicdn.net/images/film/414/image-w1280.jpg?1745490957",
+      imagem: "https://assets.mubicdn.net/images/film/414/image-w1280.jpg?1745490957",
+      classificacao: "14",
       screeningAt: "",
     },
     {
       slug: "blanc",
-      title: "Trois coleurs : Blanc",
-      year: 1994,
-      director: "Krzysztof Kieślowski ",
-      synopsis:
-        "After getting divorced and losing his job, along with his legal residency in France, a Polish immigrant begins to rebuild his life while plotting an elaborate revenge scheme against his former wife.",
+      titulo: "Três Cores: Branco",
+      ano: 1994,
+      diretores: "Krzysztof Kieślowski",
+      pais: "França, Polônia",
+      duracao: "91 min",
+      sinopse:
+        "Após se divorciar e perder seu emprego, junto com sua residência legal na França, um imigrante polonês começa a reconstruir sua vida enquanto planeja um elaborado esquema de vingança contra sua ex-esposa.",
       youtubeId: "xECEAPfdqic",
-      tags: ["comedy", "romance"],
-      thumbnailB: "",
-      thumbnail: "https://assets.mubicdn.net/images/film/413/image-w1280.jpg?1745490867",
+      tags: ["comédia", "romance"],
+      imagem: "https://assets.mubicdn.net/images/film/413/image-w1280.jpg?1745490867",
+      classificacao: "14",
       screeningAt: "",
     },
     {
       slug: "rouge",
-      title: "Trois Couleurs : Rouge ",
-      year: 1994,
-      director: "Krzysztof Kieślowski",
-      synopsis:
-        "Red explores relationships between Valentine, a model who almost runs over a dog, a retired judge who spies on his neighbours' and a few others who are unaware of how they're connected to all of this.",
+      titulo: "Três Cores: Vermelho",
+      ano: 1994,
+      diretores: "Krzysztof Kieślowski",
+      pais: "França, Suíça",
+      duracao: "99 min",
+      sinopse:
+        "Vermelho explora relacionamentos entre Valentine, uma modelo que quase atropela um cachorro, um juiz aposentado que espiona seus vizinhos e alguns outros que não sabem como estão conectados a tudo isso.",
       youtubeId: "h8NU3EYTbFg",
-      tags: ["romance", "mistery"],
-      thumbnail: "https://images.mubicdn.net/images/film/412/cache-47312-1745490939/image-w1280.jpg?size=800x",
+      tags: ["romance", "mistério"],
+      imagem: "https://images.mubicdn.net/images/film/412/cache-47312-1745490939/image-w1280.jpg?size=800x",
+      classificacao: "14",
       screeningAt: "",
     },
     {
       slug: "megalopolis",
-      title: "MEGALOPOLIS ",
-      year: 2024,
-      director: "Francis Ford Coppola",
-      synopsis:
-        "Francis Ford Coppola’s passion project, 40 years in the making, follows an upstart architect dreaming of turning the Big Apple into a utopia. This spectacular sci-fi opus is a work of extraordinary vision and ambition, featuring an all-star cast including Adam Driver, Aubrey Plaza, Laurence Fishburne, Giancarlo Esposito and Jason Schwartzman.",
+      titulo: "MEGALOPOLIS",
+      ano: 2024,
+      diretores: "Francis Ford Coppola",
+      pais: "EUA",
+      duracao: "138 min",
+      sinopse:
+        "Projeto de paixão de Francis Ford Coppola, 40 anos em desenvolvimento, segue um arquiteto ambicioso sonhando em transformar a Big Apple em uma utopia. Esta espetacular obra de ficção científica é um trabalho de visão e ambição extraordinárias, com um elenco estelar incluindo Adam Driver, Aubrey Plaza, Laurence Fishburne, Giancarlo Esposito e Jason Schwartzman.",
       youtubeId: "WVZd5b--U6w",
-      tags: ["sci-fi"],
-      thumbnail: "https://img.youtube.com/vi/WVZd5b--U6w/hqdefault.jpg",
+      tags: ["ficção científica"],
+      imagem: "https://img.youtube.com/vi/WVZd5b--U6w/hqdefault.jpg",
+      classificacao: "16",
       screeningAt: "2025-09-06T18:00:00-03:00",
     }
     
