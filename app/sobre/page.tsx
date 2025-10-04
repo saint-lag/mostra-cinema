@@ -116,6 +116,70 @@ export default function SobrePage() {
           </div>
         </section>
 
+        {/* Edições Anteriores */}
+        <section className="mb-16">
+          <div className="bg-white rounded-xl shadow-md p-8 relative overflow-hidden">
+            {/* Elementos decorativos */}
+            <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+              <Image 
+                src="/img/Desenhos.svg"
+                alt=""
+                width={120}
+                height={120}
+                className="transform translate-x-1/4 -translate-y-1/4 rotate-90"
+                aria-hidden="true"
+              />
+            </div>
+
+            <div className="relative z-10">
+              <h2 className="text-2xl font-bold text-terra mb-6 pb-2 border-b border-lima/30">
+                Edições Anteriores
+              </h2>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Edição 2024 */}
+                <div className="bg-bebe/20 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-cipo font-semibold text-lg mb-3">
+                    <span className="text-terra font-bold">2024</span> | 5ª Edição
+                  </h3>
+                  <p className="text-musgo mb-3">Tema: "Cinema e Memória Coletiva"</p>
+                  <ul className="text-musgo/80 text-sm space-y-1">
+                    <li>• 27 filmes exibidos</li>
+                    <li>• 4 oficinas realizadas</li>
+                    <li>• Público estimado: 1.200 pessoas</li>
+                  </ul>
+                </div>
+                
+                {/* Edição 2023 */}
+                <div className="bg-bebe/20 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-cipo font-semibold text-lg mb-3">
+                    <span className="text-terra font-bold">2023</span> | 4ª Edição
+                  </h3>
+                  <p className="text-musgo mb-3">Tema: "Narrativas Urgentes"</p>
+                  <ul className="text-musgo/80 text-sm space-y-1">
+                    <li>• 22 filmes exibidos</li>
+                    <li>• 3 oficinas realizadas</li>
+                    <li>• Público estimado: 950 pessoas</li>
+                  </ul>
+                </div>
+                
+                {/* Edição 2022 */}
+                <div className="bg-bebe/20 rounded-lg p-5 hover:shadow-md transition-shadow">
+                  <h3 className="text-cipo font-semibold text-lg mb-3">
+                    <span className="text-terra font-bold">2022</span> | 3ª Edição
+                  </h3>
+                  <p className="text-musgo mb-3">Tema: "Reconstruções Possíveis"</p>
+                  <ul className="text-musgo/80 text-sm space-y-1">
+                    <li>• 18 filmes exibidos</li>
+                    <li>• 2 oficinas realizadas</li>
+                    <li>• Público estimado: 800 pessoas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Equipe */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-terra mb-8 text-center">
