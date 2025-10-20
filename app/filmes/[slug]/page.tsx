@@ -4,29 +4,33 @@ import { films } from "@/content/films";
 import VideoEmbed from "@/components/VideoEmbed";
 import Link from "next/link";
 
-type Props = { params: { slug: string } };
-
 export function generateStaticParams() {
   return films.map((f) => ({ slug: f.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const film = films.find((f) => f.slug === params.slug);
-  if (!film) return { title: "Filme não encontrado" };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const metaFilm = films.find((f) => f.slug === slug);
+  if (!metaFilm) return { title: "Filme não encontrado" };
   return {
-    title: `${film.titulo} | Mostra de Cinema`,
-    description: film.sinopse,
+    title: `${metaFilm.titulo} | Mostra de Cinema`,
+    description: metaFilm.sinopse,
     openGraph: {
-      title: film.titulo,
-      description: film.sinopse,
-      images: film.imagem ? [film.imagem] : undefined,
+      title: metaFilm.titulo,
+      description: metaFilm.sinopse,
+      images: metaFilm.imagem ? [metaFilm.imagem] : undefined,
       type: "video.movie",
     },
   };
 }
 
-export default function FilmPage({ params }: Props) {
-  const film = films.find((f) => f.slug === params.slug);
+export default async function FilmPage(props: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await props.params;
+  const film = films.find((f) => f.slug === slug);
   if (!film) return notFound();
 
   return (
