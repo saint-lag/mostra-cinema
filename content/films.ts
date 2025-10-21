@@ -117,7 +117,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
-      imagem: getPosterUrl('a-cor-do-cinema'),
+      imagem: getPosterUrl('a-cor-do-cinema', 1),
     },
     {
       slug: "a-roda",
