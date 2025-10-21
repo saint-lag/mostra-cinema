@@ -9,6 +9,8 @@ const token = process.env.BLOB_READ_WRITE_TOKEN;
 // Dados gerados estaticamente durante a build
 const manifestFromBuild = manifest as PosterMap;
 
+const skipBlobFetch = process.env.SKIP_BLOB_FETCH === 'true';
+
 // URLs estáticas dos posters (serão preenchidas durante a build)
 let staticPosterUrls: PosterMap | null =
   Object.keys(manifestFromBuild).length > 0 ? manifestFromBuild : null;
@@ -17,7 +19,7 @@ let staticPosterUrls: PosterMap | null =
 export function getPosterUrl(filmId: string, index: number = 0): string | undefined {
   if (!staticPosterUrls) {
     throw new Error(
-      'Poster URLs não foram inicializadas durante a build. Execute `npm run build` para gerar o manifest ou defina o token BLOB.'
+      'Poster URLs não foram inicializadas durante a build. Execute `npm run build` para gerar o manifest, defina o token BLOB ou habilite SKIP_BLOB_FETCH=true durante o desenvolvimento.'
     );
   }
   return staticPosterUrls[filmId]?.[index];
@@ -28,8 +30,14 @@ export async function initializePosterUrls() {
   // Retorna o cache se já tiver sido carregado
   if (staticPosterUrls) return staticPosterUrls;
 
+  if (skipBlobFetch) {
+    staticPosterUrls =
+      Object.keys(manifestFromBuild).length > 0 ? manifestFromBuild : {};
+    return staticPosterUrls;
+  }
+
   if (!token) {
-    console.error('BLOB_READ_WRITE_TOKEN não encontrado nas variáveis de ambiente');
+    console.warn('BLOB_READ_WRITE_TOKEN não encontrado nas variáveis de ambiente');
     staticPosterUrls = {};
     return staticPosterUrls;
   }
@@ -74,7 +82,8 @@ export async function initializePosterUrls() {
     staticPosterUrls = urls;
     return urls;
   } catch (error) {
-    console.error('Erro ao buscar posters:', error);
+    const message = error instanceof Error ? error.message : String(error);
+    console.warn('Não foi possível buscar posters do Vercel Blob:', message);
     staticPosterUrls = {};
     return staticPosterUrls;
   }
@@ -95,15 +104,6 @@ export type Film = {
   screeningAt?: string;
 };
 
-export type Session = {
-  data: string;
-  hora: string;
-  sala: string;
-  filmeSlug: string;
-  tipo: 'mostra' | 'competicao';
-  idioma: 'legendado' | 'dublado';
-};
-
 // Função para obter os filmes com URLs dos posters
 export async function getFilms(): Promise<Film[]> {
   await initializePosterUrls();
@@ -117,7 +117,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
-      imagem: getPosterUrl('a-cor-do-cinema', 1),
+      imagem: getPosterUrl('a-cor-do-cinema'),
     },
     {
       slug: "a-roda",

@@ -1,57 +1,138 @@
 export type Session = {
   id: string;
-  data: string; // ISO string
-  hora: string;
+  data: string; // ISO date (YYYY-MM-DD)
+  hora: string; // HH:mm
   sala: string;
   filmeSlug: string;
-  tipo: 'mostra' | 'competicao';
-  idioma: 'legendado' | 'dublado';
+  tipo: 'mostra' ;
+  idioma:  'PT-BR';
 };
 
 export const sessions: Session[] = [
   {
-    id: "s1",
-    data: "2025-09-05",
-    hora: "19:30",
-    sala: "Sala 1 - Cinema Municipal",
-    filmeSlug: "queer",
-    tipo: "mostra",
-    idioma: "legendado"
+    id: 's1',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'a-cor-do-cinema',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
   },
   {
-    id: "s2",
-    data: "2025-09-06",
-    hora: "18:00",
-    sala: "Sala 1 - Cinema Municipal",
-    filmeSlug: "megalopolis",
-    tipo: "mostra",
-    idioma: "legendado"
+    id: 's2',
+    data: '2025-10-25',
+    hora: '18:30',
+    sala: 'Sala CPH',
+    filmeSlug: 'destino-tracado',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
   },
   {
-    id: "s3",
-    data: "2025-09-06",
-    hora: "20:30",
-    sala: "Sala 2 - Centro Cultural",
-    filmeSlug: "bleu",
-    tipo: "competicao",
-    idioma: "legendado"
+    id: 's3',
+    data: '2025-10-26',
+    hora: '17:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'metaverso-em-desencanto',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
   },
   {
-    id: "s4",
-    data: "2025-09-07",
-    hora: "16:00",
-    sala: "Sala 2 - Centro Cultural",
-    filmeSlug: "blanc",
-    tipo: "competicao",
-    idioma: "legendado"
+    id: 's4',
+    data: '2025-10-25',
+    hora: '17:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'na-risca',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
   },
   {
-    id: "s5",
-    data: "2025-09-07",
-    hora: "18:30",
-    sala: "Sala 1 - Cinema Municipal",
-    filmeSlug: "rouge",
-    tipo: "competicao",
-    idioma: "legendado"
-  }
+    id: 's5',
+    data: '2025-10-26',
+    hora: '17:30',
+    sala: 'Sala 1 - Cinema Municipal',
+    filmeSlug: 'sobre-nos',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's6',
+    data: '2025-10-25',
+    hora: '17:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'tempestade-de-mentiras',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's7',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'ervas',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's8',
+    data: '2025-10-25',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'uma-menina-duas-mulheres-e-muitas-historias',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's9',
+    data: '2025-10-25',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'cheia',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's10',
+    data: '2025-10-25',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'done-conceicao',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's11',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'em-nome-da-mae',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's12',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'e-zoo',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's13',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'a-roda',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
+  {
+    id: 's14',
+    data: '2025-10-26',
+    hora: '16:00',
+    sala: 'Sala CPH',
+    filmeSlug: 'in-comodo',
+    tipo: 'mostra',
+    idioma: 'PT-BR',
+  },
 ];

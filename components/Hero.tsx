@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { Film } from "@/content/films";
 
+const PLACEHOLDER_POSTER = "/img/Logo_1.png";
+
 export default function HeroProg({ film }: { film: Film }) {
-  const bg = film.imagem ?? `https://img.youtube.com/vi/${film.youtubeId}/maxresdefault.jpg`;
+  const bg =
+    film.imagem ??
+    (film.youtubeId
+      ? `https://img.youtube.com/vi/${film.youtubeId}/maxresdefault.jpg`
+      : PLACEHOLDER_POSTER);
 
   return (
     <section className="bg-bebe">

@@ -36,7 +36,7 @@ export default async function ProgramaPage() {
 
       <div className="space-y-8">
         {Object.entries(grupos).map(([data, sessoes]) => {
-          const dataFormatada = new Date(data).toLocaleDateString('pt-BR', {
+          const dataFormatada = new Date(`${data}T12:00:00`).toLocaleDateString('pt-BR', {
             weekday: 'long',
             day: 'numeric',
             month: 'long'

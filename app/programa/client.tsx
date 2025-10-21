@@ -104,15 +104,7 @@ export default function ProgramaClient({
                       <div className="flex flex-col items-end">
                         <div className="text-musgo font-medium">{sessao.hora}</div>
                         <div className="text-sm text-musgo/70">{sessao.sala}</div>
-                        <div className="mt-2">
-                          <span className={`text-xs font-medium px-2 py-1 rounded ${
-                            sessao.tipo === 'competicao' 
-                              ? 'bg-terra/10 text-terra' 
-                              : 'bg-lima/20 text-musgo'
-                          }`}>
-                            {sessao.tipo === 'competicao' ? 'Competição' : 'Mostra'}
-                          </span>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>

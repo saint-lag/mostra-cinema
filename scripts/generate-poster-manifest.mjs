@@ -11,9 +11,52 @@
  */
 
 import { mkdir, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { list } from '@vercel/blob';
+
+async function hydrateEnv() {
+  if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_READ_TOKEN) {
+    return;
+  }
+
+  const candidates = [
+    '.env.local',
+    '.env.development',
+    '.env',
+  ];
+
+  for (const file of candidates) {
+    const absolute = path.join(process.cwd(), file);
+    try {
+      const content = await readFile(absolute, 'utf8');
+      content
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter((line) => line && !line.startsWith('#'))
+        .forEach((line) => {
+          const match = line.match(/^([A-Z0-9_]+)=(.*)$/);
+          if (!match) return;
+          const [, key, rawValue] = match;
+          if (process.env[key]) return;
+
+          const unquoted = rawValue.startsWith('"') && rawValue.endsWith('"')
+            ? rawValue.slice(1, -1)
+            : rawValue;
+          process.env[key] = unquoted;
+        });
+    } catch (error) {
+      // Ignore missing env files
+    }
+
+    if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_READ_TOKEN) {
+      break;
+    }
+  }
+}
+
+await hydrateEnv();
 
 const token =
   process.env.BLOB_READ_WRITE_TOKEN ?? process.env.BLOB_READ_TOKEN ?? '';
