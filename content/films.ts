@@ -1,29 +1,41 @@
 import { list } from '@vercel/blob';
+import manifest from './poster-manifest.json';
+
+type PosterMap = Record<string, string[]>;
 
 // Initialize client with token
 const token = process.env.BLOB_READ_WRITE_TOKEN;
 
-// Cache das URLs (para evitar chamadas repetidas)
-let posterUrlsMap: Map<string, string[]> = new Map();
+// Dados gerados estaticamente durante a build
+const manifestFromBuild = manifest as PosterMap;
+
+// URLs estáticas dos posters (serão preenchidas durante a build)
+let staticPosterUrls: PosterMap | null =
+  Object.keys(manifestFromBuild).length > 0 ? manifestFromBuild : null;
 
 // Função para obter poster específico
 export function getPosterUrl(filmId: string, index: number = 0): string | undefined {
-  const posters = posterUrlsMap.get(filmId);
-  console.log(`Getting poster for filmId: ${filmId}, index: ${index}, found posters: ${posters?.length}`);
-  return posters?.[index];
+  if (!staticPosterUrls) {
+    throw new Error(
+      'Poster URLs não foram inicializadas durante a build. Execute `npm run build` para gerar o manifest ou defina o token BLOB.'
+    );
+  }
+  return staticPosterUrls[filmId]?.[index];
 }
 
-// Função para inicializar as URLs dos posters
+// Função para inicializar as URLs dos posters durante a build
 export async function initializePosterUrls() {
-  if (posterUrlsMap.size > 0) return posterUrlsMap;
+  // Retorna o cache se já tiver sido carregado
+  if (staticPosterUrls) return staticPosterUrls;
 
   if (!token) {
     console.error('BLOB_READ_WRITE_TOKEN não encontrado nas variáveis de ambiente');
-    return new Map();
+    staticPosterUrls = {};
+    return staticPosterUrls;
   }
 
   try {
-    console.log('Fetching all posters...');
+    console.log('Fetching all posters during build...');
     const { blobs } = await list({
       token,
       prefix: 'posters'
@@ -31,8 +43,8 @@ export async function initializePosterUrls() {
 
     console.log(`Found ${blobs.length} posters`);
     
-    // Reset the map
-    posterUrlsMap = new Map();
+    // Cria o objeto de URLs estáticas
+    const urls: PosterMap = {};
     
     blobs.forEach(blob => {
       // O diretório do filme é a primeira parte do caminho após posters/
@@ -40,29 +52,31 @@ export async function initializePosterUrls() {
       if (pathParts.length >= 2) {
         const dirName = pathParts[1]; // pega o nome do diretório após 'posters/'
         
-        if (!posterUrlsMap.has(dirName)) {
-          posterUrlsMap.set(dirName, []);
+        if (!urls[dirName]) {
+          urls[dirName] = [];
         }
-        posterUrlsMap.get(dirName)?.push(blob.url);
+        urls[dirName].push(blob.url);
       }
     });
 
     // Ordena as URLs de cada filme
-    posterUrlsMap.forEach((urls) => {
-      urls.sort(); // Garante ordem consistente
+    Object.values(urls).forEach(urlArray => {
+      urlArray.sort(); // Garante ordem consistente
     });
 
     console.log('Posters por filme:', 
       Object.fromEntries(
-        Array.from(posterUrlsMap.entries())
-          .map(([key, urls]) => [key, urls.length])
+        Object.entries(urls).map(([key, urlArray]) => [key, urlArray.length])
       )
     );
 
-    return posterUrlsMap;
+    // Armazena no cache estático
+    staticPosterUrls = urls;
+    return urls;
   } catch (error) {
     console.error('Erro ao buscar posters:', error);
-    return new Map();
+    staticPosterUrls = {};
+    return staticPosterUrls;
   }
 }
 

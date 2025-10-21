@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "npm run generate:posters",
+    "generate:posters": "node ./scripts/generate-poster-manifest.mjs",
     "build": "next build --turbopack",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
