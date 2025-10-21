@@ -1,4 +1,4 @@
-import { films } from "@/content/films";
+import { getFilms } from "@/content/films";
 import Hero from "@/components/Hero";
 import FilmCard from "@/components/FilmCard";
 import type { Metadata } from "next";
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const films = await getFilms();
   const destaque = films[0];
   return (
     <>

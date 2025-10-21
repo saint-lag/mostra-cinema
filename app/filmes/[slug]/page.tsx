@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { films } from "@/content/films";
+import { getFilms } from "@/content/films";
 import VideoEmbed from "@/components/VideoEmbed";
 import Link from "next/link";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const films = await getFilms();
   return films.map((f) => ({ slug: f.slug }));
 }
 
@@ -12,6 +13,7 @@ export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await props.params;
+  const films = await getFilms();
   const metaFilm = films.find((f) => f.slug === slug);
   if (!metaFilm) return { title: "Filme não encontrado" };
   return {
@@ -30,6 +32,7 @@ export default async function FilmPage(props: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await props.params;
+  const films = await getFilms();
   const film = films.find((f) => f.slug === slug);
   if (!film) return notFound();
 

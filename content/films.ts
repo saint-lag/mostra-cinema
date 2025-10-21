@@ -1,48 +1,100 @@
-// URLs das imagens no Vercel Blob
-const BLOB_BASE_URL = 'https://public.blob.vercel-storage.com';
+import { list } from '@vercel/blob';
 
-const posterUrls = {
-  corDoCinema: `${BLOB_BASE_URL}/a-cor-do-cinema/A%20Cor%20do%20Cinema_Cartaz.png`,
-  aRoda: `${BLOB_BASE_URL}/a-roda/A%20RODA%20(1).png`,
-  cheia: `${BLOB_BASE_URL}/cheia/thumb.jpg`,
-  destinoTracado: `${BLOB_BASE_URL}/destino/CART%20DEST%20TRAÇADO%20NOVO.jpg`,
-  doneConceicao: `${BLOB_BASE_URL}/done/IMG_2098.jpg`,
-  emNomeDaMae: `${BLOB_BASE_URL}/em-nome-da-mae/EM%20NOME%20DA%20MÃE.png`,
-  inComodo: `${BLOB_BASE_URL}/in-comodo/in-comodo.png`,
-  metaverso: `${BLOB_BASE_URL}/metaverso-em-desencanto/IMG_9726.PNG`,
-  naRisca: `${BLOB_BASE_URL}/na-risca/na-risca.jpg`,
-  sobreNos: `${BLOB_BASE_URL}/sobre-nos/Poster%20Sobre%20Nós.png`,
-  tempestades: `${BLOB_BASE_URL}/tempestades/tempestade.jpeg`,
-  umaMenina: `${BLOB_BASE_URL}/uma-menina-duas-mulheres-e-muitas-historias/uma-menina-duas-mulheres-e-muitas-historias.JPG`
-};
+// Initialize client with token
+const token = process.env.BLOB_READ_WRITE_TOKEN;
+
+// Cache das URLs (para evitar chamadas repetidas)
+let posterUrlsMap: Map<string, string[]> = new Map();
+
+// Função para obter poster específico
+export function getPosterUrl(filmId: string, index: number = 0): string | undefined {
+  const posters = posterUrlsMap.get(filmId);
+  console.log(`Getting poster for filmId: ${filmId}, index: ${index}, found posters: ${posters?.length}`);
+  return posters?.[index];
+}
+
+// Função para inicializar as URLs dos posters
+export async function initializePosterUrls() {
+  if (posterUrlsMap.size > 0) return posterUrlsMap;
+
+  if (!token) {
+    console.error('BLOB_READ_WRITE_TOKEN não encontrado nas variáveis de ambiente');
+    return new Map();
+  }
+
+  try {
+    console.log('Fetching all posters...');
+    const { blobs } = await list({
+      token,
+      prefix: 'posters'
+    });
+
+    console.log(`Found ${blobs.length} posters`);
+    
+    // Reset the map
+    posterUrlsMap = new Map();
+    
+    blobs.forEach(blob => {
+      // O diretório do filme é a primeira parte do caminho após posters/
+      const pathParts = blob.pathname.split('/');
+      if (pathParts.length >= 2) {
+        const dirName = pathParts[1]; // pega o nome do diretório após 'posters/'
+        
+        if (!posterUrlsMap.has(dirName)) {
+          posterUrlsMap.set(dirName, []);
+        }
+        posterUrlsMap.get(dirName)?.push(blob.url);
+      }
+    });
+
+    // Ordena as URLs de cada filme
+    posterUrlsMap.forEach((urls) => {
+      urls.sort(); // Garante ordem consistente
+    });
+
+    console.log('Posters por filme:', 
+      Object.fromEntries(
+        Array.from(posterUrlsMap.entries())
+          .map(([key, urls]) => [key, urls.length])
+      )
+    );
+
+    return posterUrlsMap;
+  } catch (error) {
+    console.error('Erro ao buscar posters:', error);
+    return new Map();
+  }
+}
 
 export type Film = {
-    slug: string;
-    titulo: string;
-    diretores?: string;
-    pais?: string;
-    ano?: number;
-    duracao?: string;
-    sinopse?: string;
-    imagem?: string;
-    classificacao?: string;
-    tags?: string[];
-    // ID do vídeo no YouTube (ex: https://www.youtube.com/watch?v=VIDEO_ID)
-    youtubeId: string;
-    // opcional: data/hora de exibição
-    screeningAt?: string; // ISO string
-  };
-  
+  slug: string;
+  titulo: string;
+  diretores?: string;
+  pais?: string;
+  ano?: number;
+  duracao?: string;
+  sinopse?: string;
+  imagem?: string;
+  classificacao?: string;
+  tags?: string[];
+  youtubeId: string;
+  screeningAt?: string;
+};
+
 export type Session = {
-    data: string; // ISO string
-    hora: string;
-    sala: string;
-    filmeSlug: string;
-    tipo: 'mostra' | 'competicao';
-    idioma: 'legendado' | 'dublado';
-  };
+  data: string;
+  hora: string;
+  sala: string;
+  filmeSlug: string;
+  tipo: 'mostra' | 'competicao';
+  idioma: 'legendado' | 'dublado';
+};
+
+// Função para obter os filmes com URLs dos posters
+export async function getFilms(): Promise<Film[]> {
+  await initializePosterUrls();
   
-  export const films: Film[] = [
+  return [
     {
       slug: "a-cor-do-cinema",
       titulo: "A COR DO CINEMA",
@@ -51,7 +103,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
-      imagem: posterUrls.corDoCinema,
+      imagem: getPosterUrl('a-cor-do-cinema'),
     },
     {
       slug: "a-roda",
@@ -61,7 +113,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Um dia após o outro, até um dia se tornar o outro.",
-      imagem: posterUrls.aRoda,
+      imagem: getPosterUrl('a-roda'),
       screeningAt: "2025-09-06T18:00:00-03:00",
       ano: 2024,
     },
@@ -73,7 +125,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "As últimas cheias marcadas na parede medem a velocidade da vida. Lavando imagens e derretendo certezas.",
-      imagem: posterUrls.cheia,
+      imagem: getPosterUrl('cheia'),
     },
     {
       slug: "destino-tracado",
@@ -83,7 +135,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: 'Mariana, uma jovem de 25 anos da Baixada Fluminense, vive uma rotina desgastante de currículos enviados e entrevistas sem sentido. Em meio à ansiedade e à pressão por "dar certo", ela sente que algo essencial está faltando — até que um sonho misterioso de sua avó, Dona Zelma, a leva até Mãe Tereza, uma taróloga cigana que vive em uma Kombi encantada.',
-      imagem: posterUrls.destinoTracado,
+      imagem: getPosterUrl('destino'),
     },
     {
       slug: "done-conceicao",
@@ -93,7 +145,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um poderoso testemunho de fé e resistência, o documentário narra a trajetória de Doné Conceição, líder espiritual de um terreiro profundamente marcado pela intolerância religiosa. Após anos enfrentando ataques e um incêndio que destruiu o local e apagou registros históricos, Doné e sua comunidade se veem obrigados a recomeçar. Por meio de relatos íntimos e emocionantes, frequentadores e filhos de santo relembram episódios de luta e superação, enquanto cenas observacionais e registros de arquivo revelam a beleza e a força de um espaço sagrado renascido.\nO documentário celebra os dez anos de resistência e resiliência de Doné Conceição, reforçando a importância da união, resiliência e luta contra o preconceito.",
-      imagem: posterUrls.doneConceicao,
+      imagem: getPosterUrl('done'),
     },
     {
       slug: "em-nome-da-mae",
@@ -103,7 +155,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Após a morte da mãe, três irmãos tentam recriar uma tradição familiar, mas sem ela, o ritual rapidamente se desfaz em caos e tensão.",
-      imagem: posterUrls.emNomeDaMae,
+      imagem: getPosterUrl('em-nome-da-mae'),
     },
     {
       slug: "in-comodo",
@@ -113,7 +165,7 @@ export type Session = {
       classificacao: "14",
       youtubeId: "",
       sinopse: "Um homem após 3 anos de Pandemia.  Vive suas angústias e traumas devido a covid 19.",
-      imagem: posterUrls.inComodo,
+      imagem: getPosterUrl('in-comodo'),
     },
     {
       slug: "metaverso-em-desencanto",
@@ -123,7 +175,7 @@ export type Session = {
       classificacao: "16",
       youtubeId: "",
       sinopse: "Um surfista encontra uma garota na areia de uma praia carioca no que parece um banal filme de surf. Mas logo as coisas se mostram diferentes de um clichê romântico e um clima Noir se estabelece; ele é na realidade um avatar de alguém impossibilitado de sair de casa e ela é um avatar de uma mulher desfigurada. Intrigado pela moça, o avatar do surfista persegue o avatar da moça desfigurada até a casa dela, para tentar desvendar o mistério e acaba descobrindo que a mulher por trás do avatar feminino é na realidade vítima de uma família disfuncional ao extremo, refém de um patriarca insanamente violento, nessa mistura de gêneros com elementos de Sci-Fi, Giallo, suspense e horror.",
-      imagem: posterUrls.metaverso,
+      imagem: getPosterUrl('metaverso-em-desencanto'),
     },
     {
       slug: "na-risca",
@@ -133,7 +185,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Traz a perspectiva de um jovem da Vila Canaã, Baixada Fluminense, sobre a sedução da barbearia em um cenário de vivência que flerta com o crime e as drogas. Como as barbearias podem impactar na sua vida e na vida dos jovens da sua comunidade?",
-      imagem: posterUrls.naRisca,
+      imagem: getPosterUrl('na-risca', 2),
     },
     {
       slug: "sobre-nos",
@@ -143,7 +195,7 @@ export type Session = {
       classificacao: "12",
       youtubeId: "",
       sinopse: "Uma conversa entre duas mulheres se transforma em um mergulho nas complexidades do amor e do passado. Uma história íntima sobre encontros, despedidas e os sentimentos que permanecem.",
-      imagem: posterUrls.sobreNos,
+      imagem: getPosterUrl('sobre-nos', 1),
     },
     {
       slug: "tempestade-de-mentiras",
@@ -153,7 +205,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Após perder o filho e a casa em uma tempestade, Dona Sebastiana, busca ajuda de um político da cidade, mas descobre que a falsidade é cruel. Um drama social sobre hipocrisia política e solidariedade comunitária.",
-      imagem: posterUrls.tempestades,
+      imagem: getPosterUrl('tempestade'),
     },
     {
       slug: "uma-menina-duas-mulheres-e-muitas-historias",
@@ -163,7 +215,7 @@ export type Session = {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "O filme conta a história de Aninha e suas tias Cláudia e Cris, duas mulheres negras, professoras da rede pública, contadoras de histórias que sonham ser escritoras. Aninha mora com Tia Cláudia, e Tia Cris é sua vizinha de prédio. Elas estão sempre juntas: dão aulas, cozinham, conversam, passeiam, dirigem e Aninha está sempre com elas. A história se passa ao longo de um dia na vida das três: uma sexta-feira. Elas vão para a escola, depois passeiam no parque e, em seguida, voltam para casa onde continuam o papo na varanda. Aninha observa as tias, escuta todas as conversas, ouvimos alguns pensamentos seus, mas ela quase não fala, embora tudo observe com seus olhos expressivos. Enquanto as tias conversam sobre o desejo que ambas têm de serem escritoras, Aninha pega um papel e, lembrando-se das coisas que ouviu ao longo do dia, começa a desenhar personagens e partes das histórias que escutou. As tias percebem e, sorrateiramente, se aproximam para observar. Então os desenhos ganham vida, e as tias visualizam as cenas que elas mesmas narraram ao longo do dia. A iniciativa da criança terá papel decisivo no caminho destas duas mulheres que sonham escrever seus livros.",
-      imagem: posterUrls.umaMenina,
+      imagem: getPosterUrl('uma-menina-duas-mulheres-e-muitas-historias'),
     }
   ];
-  
+}
