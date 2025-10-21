@@ -1,6 +1,6 @@
 // app/filmes/route.ts
 import { NextResponse } from 'next/server'
-import { films } from '@/content/films'
+import { getFilms } from '@/content/films'
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +8,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const tag = searchParams.get('tag');
   const slug = searchParams.get('slug');
+  
+  const films = await getFilms();
   
   // Filtrar por tag se especificada
   if (tag) {
