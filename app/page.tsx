@@ -15,12 +15,8 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const films = await getFilms();
-  const randomFilm = () => {
-    const filmsIndex = [0, 1, 3, 5, 7, 8, 9];
-    const randomIndex = Math.floor(Math.random() * filmsIndex.length);
-    return films[filmsIndex[randomIndex]];
-  }
-  const destaque = randomFilm();
+  
+  const destaque = films[7];
   return (
     <>
       {destaque ? <Hero film={destaque}/> : null}
