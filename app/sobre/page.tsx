@@ -149,32 +149,6 @@ export default function SobrePage() {
                     <li>• Público estimado: 1.200 pessoas</li>
                   </ul>
                 </div>
-                
-                {/* Edição 2023 */}
-                <div className="bg-bebe/20 rounded-lg p-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-cipo font-semibold text-lg mb-3">
-                    <span className="text-terra font-bold">2023</span> | 4ª Edição
-                  </h3>
-                  <p className="text-musgo mb-3">Tema: "Narrativas Urgentes"</p>
-                  <ul className="text-musgo/80 text-sm space-y-1">
-                    <li>• 22 filmes exibidos</li>
-                    <li>• 3 oficinas realizadas</li>
-                    <li>• Público estimado: 950 pessoas</li>
-                  </ul>
-                </div>
-                
-                {/* Edição 2022 */}
-                <div className="bg-bebe/20 rounded-lg p-5 hover:shadow-md transition-shadow">
-                  <h3 className="text-cipo font-semibold text-lg mb-3">
-                    <span className="text-terra font-bold">2022</span> | 3ª Edição
-                  </h3>
-                  <p className="text-musgo mb-3">Tema: "Reconstruções Possíveis"</p>
-                  <ul className="text-musgo/80 text-sm space-y-1">
-                    <li>• 18 filmes exibidos</li>
-                    <li>• 2 oficinas realizadas</li>
-                    <li>• Público estimado: 800 pessoas</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
