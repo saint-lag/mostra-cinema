@@ -7,7 +7,9 @@ const IMAGE_UNOPTIMIZED =
   process.env.NEXT_PUBLIC_IMAGE_UNOPTIMIZED === "true";
 
 export default function FilmCard({ film }: { film: Film }) {
-  const posterSrc = film.imagem; 
+  const posterSrc = film.imagem ?? (film.youtubeId
+      ? `https://img.youtube.com/vi/${film.youtubeId}/hqdefault.jpg`
+      : PLACEHOLDER_POSTER);
 
   return (
     <article className="group overflow-hidden rounded-lg bg-white shadow transition hover:shadow-md">
