@@ -117,7 +117,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
-      imagem: getPosterUrl('a-cor-do-cinema'),
+      imagem: getPosterUrl('a-cor-do-cinema', 1),
     },
     {
       slug: "a-roda",
@@ -139,7 +139,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "As últimas cheias marcadas na parede medem a velocidade da vida. Lavando imagens e derretendo certezas.",
-      imagem: getPosterUrl('cheia'),
+      imagem: getPosterUrl('cheia', 1),
     },
     {
       slug: "destino-tracado",
@@ -159,7 +159,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Em um poderoso testemunho de fé e resistência, o documentário narra a trajetória de Doné Conceição, líder espiritual de um terreiro profundamente marcado pela intolerância religiosa. Após anos enfrentando ataques e um incêndio que destruiu o local e apagou registros históricos, Doné e sua comunidade se veem obrigados a recomeçar. Por meio de relatos íntimos e emocionantes, frequentadores e filhos de santo relembram episódios de luta e superação, enquanto cenas observacionais e registros de arquivo revelam a beleza e a força de um espaço sagrado renascido.\nO documentário celebra os dez anos de resistência e resiliência de Doné Conceição, reforçando a importância da união, resiliência e luta contra o preconceito.",
-      imagem: getPosterUrl('done'),
+      imagem: getPosterUrl('done', 1),
     },
     {
       slug: "em-nome-da-mae",
@@ -169,7 +169,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Após a morte da mãe, três irmãos tentam recriar uma tradição familiar, mas sem ela, o ritual rapidamente se desfaz em caos e tensão.",
-      imagem: getPosterUrl('em-nome-da-mae'),
+      imagem: getPosterUrl('em-nome-da-mae', 2),
     },
     {
       slug: "in-comodo",
@@ -189,7 +189,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "16",
       youtubeId: "",
       sinopse: "Um surfista encontra uma garota na areia de uma praia carioca no que parece um banal filme de surf. Mas logo as coisas se mostram diferentes de um clichê romântico e um clima Noir se estabelece; ele é na realidade um avatar de alguém impossibilitado de sair de casa e ela é um avatar de uma mulher desfigurada. Intrigado pela moça, o avatar do surfista persegue o avatar da moça desfigurada até a casa dela, para tentar desvendar o mistério e acaba descobrindo que a mulher por trás do avatar feminino é na realidade vítima de uma família disfuncional ao extremo, refém de um patriarca insanamente violento, nessa mistura de gêneros com elementos de Sci-Fi, Giallo, suspense e horror.",
-      imagem: getPosterUrl('metaverso-em-desencanto'),
+      imagem: getPosterUrl('metaverso-em-desencanto', 4),
     },
     {
       slug: "na-risca",
@@ -209,7 +209,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "12",
       youtubeId: "",
       sinopse: "Uma conversa entre duas mulheres se transforma em um mergulho nas complexidades do amor e do passado. Uma história íntima sobre encontros, despedidas e os sentimentos que permanecem.",
-      imagem: getPosterUrl('sobre-nos', 1),
+      imagem: getPosterUrl('sobre-nos', 2),
     },
     {
       slug: "tempestade-de-mentiras",
@@ -219,7 +219,7 @@ export async function getFilms(): Promise<Film[]> {
       classificacao: "Livre",
       youtubeId: "",
       sinopse: "Após perder o filho e a casa em uma tempestade, Dona Sebastiana, busca ajuda de um político da cidade, mas descobre que a falsidade é cruel. Um drama social sobre hipocrisia política e solidariedade comunitária.",
-      imagem: getPosterUrl('tempestade'),
+      imagem: getPosterUrl('tempestade', 1),
     },
     {
       slug: "uma-menina-duas-mulheres-e-muitas-historias",
