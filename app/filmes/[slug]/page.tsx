@@ -80,11 +80,29 @@ export default async function FilmPage(props: {
                 <p><span className="font-semibold">Direção:</span> {film.diretores}</p>
               )}
               {film.pais && (
-                <p><span className="font-semibold">País:</span> {film.pais}</p>
+                <p><span className="font-semibold">Distrito:</span> {film.pais}</p>
               )}
               {film.duracao && (
                 <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
               )}
+              {film.cameras ? (
+                <p><span className="font-semibold">Câmeras:</span> {film.cameras}</p>
+              ) : null}
+              {film.som ? (
+                <p><span className="font-semibold">Som:</span> {film.som}</p>
+              ) : null}
+              {film.producao ? (
+                <p><span className="font-semibold">Produção:</span> {film.producao}</p>
+              ) : null}
+              {film.montagem ? (
+                <p><span className="font-semibold">Montagem:</span> {film.montagem}</p>
+              ) : null}
+              {film.edicao ? (
+                <p><span className="font-semibold">Edição:</span> {film.edicao}</p>
+              ) : null}
+              {film.elenco && film.elenco.length ? (
+                <p><span className="font-semibold">Elenco:</span> {film.elenco.join(", ")}</p>
+              ) : null}
             </div>
             
             {film.tags?.length ? (

@@ -102,6 +102,12 @@ export type Film = {
   tags?: string[];
   youtubeId: string;
   screeningAt?: string;
+  cameras?: string;
+  som?: string;
+  producao?: string;
+  montagem?: string;
+  edicao?: string;
+  elenco?: string[];
 };
 
 // Função para obter os filmes com URLs dos posters
@@ -118,6 +124,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
       imagem: getPosterUrl('a-cor-do-cinema', 1),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "a-roda",
@@ -130,6 +142,12 @@ export async function getFilms(): Promise<Film[]> {
       imagem: getPosterUrl('a-roda'),
       screeningAt: "2025-09-06T18:00:00-03:00",
       ano: 2024,
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "cheia",
@@ -140,6 +158,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "As últimas cheias marcadas na parede medem a velocidade da vida. Lavando imagens e derretendo certezas.",
       imagem: getPosterUrl('cheia', 1),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "destino-tracado",
@@ -150,6 +174,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: 'Mariana, uma jovem de 25 anos da Baixada Fluminense, vive uma rotina desgastante de currículos enviados e entrevistas sem sentido. Em meio à ansiedade e à pressão por "dar certo", ela sente que algo essencial está faltando — até que um sonho misterioso de sua avó, Dona Zelma, a leva até Mãe Tereza, uma taróloga cigana que vive em uma Kombi encantada.',
       imagem: getPosterUrl('destino'),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "done-conceicao",
@@ -160,6 +190,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Em um poderoso testemunho de fé e resistência, o documentário narra a trajetória de Doné Conceição, líder espiritual de um terreiro profundamente marcado pela intolerância religiosa. Após anos enfrentando ataques e um incêndio que destruiu o local e apagou registros históricos, Doné e sua comunidade se veem obrigados a recomeçar. Por meio de relatos íntimos e emocionantes, frequentadores e filhos de santo relembram episódios de luta e superação, enquanto cenas observacionais e registros de arquivo revelam a beleza e a força de um espaço sagrado renascido.\nO documentário celebra os dez anos de resistência e resiliência de Doné Conceição, reforçando a importância da união, resiliência e luta contra o preconceito.",
       imagem: getPosterUrl('done', 1),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "em-nome-da-mae",
@@ -170,6 +206,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Após a morte da mãe, três irmãos tentam recriar uma tradição familiar, mas sem ela, o ritual rapidamente se desfaz em caos e tensão.",
       imagem: getPosterUrl('em-nome-da-mae', 2),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "in-comodo",
@@ -180,6 +222,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Um homem após 3 anos de Pandemia.  Vive suas angústias e traumas devido a covid 19.",
       imagem: getPosterUrl('in-comodo'),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "metaverso-em-desencanto",
@@ -190,6 +238,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Um surfista encontra uma garota na areia de uma praia carioca no que parece um banal filme de surf. Mas logo as coisas se mostram diferentes de um clichê romântico e um clima Noir se estabelece; ele é na realidade um avatar de alguém impossibilitado de sair de casa e ela é um avatar de uma mulher desfigurada. Intrigado pela moça, o avatar do surfista persegue o avatar da moça desfigurada até a casa dela, para tentar desvendar o mistério e acaba descobrindo que a mulher por trás do avatar feminino é na realidade vítima de uma família disfuncional ao extremo, refém de um patriarca insanamente violento, nessa mistura de gêneros com elementos de Sci-Fi, Giallo, suspense e horror.",
       imagem: getPosterUrl('metaverso-em-desencanto', 4),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "na-risca",
@@ -200,6 +254,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Traz a perspectiva de um jovem da Vila Canaã, Baixada Fluminense, sobre a sedução da barbearia em um cenário de vivência que flerta com o crime e as drogas. Como as barbearias podem impactar na sua vida e na vida dos jovens da sua comunidade?",
       imagem: getPosterUrl('na-risca', 2),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "sobre-nos",
@@ -210,6 +270,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Uma conversa entre duas mulheres se transforma em um mergulho nas complexidades do amor e do passado. Uma história íntima sobre encontros, despedidas e os sentimentos que permanecem.",
       imagem: getPosterUrl('sobre-nos', 2),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "tempestade-de-mentiras",
@@ -220,6 +286,12 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "Após perder o filho e a casa em uma tempestade, Dona Sebastiana, busca ajuda de um político da cidade, mas descobre que a falsidade é cruel. Um drama social sobre hipocrisia política e solidariedade comunitária.",
       imagem: getPosterUrl('tempestade', 1),
+      cameras: "",
+      som: "",
+      producao: "",
+      montagem: "",
+      edicao: "",
+      elenco: [],
     },
     {
       slug: "uma-menina-duas-mulheres-e-muitas-historias",
@@ -230,6 +302,44 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "",
       sinopse: "O filme conta a história de Aninha e suas tias Cláudia e Cris, duas mulheres negras, professoras da rede pública, contadoras de histórias que sonham ser escritoras. Aninha mora com Tia Cláudia, e Tia Cris é sua vizinha de prédio. Elas estão sempre juntas: dão aulas, cozinham, conversam, passeiam, dirigem e Aninha está sempre com elas. A história se passa ao longo de um dia na vida das três: uma sexta-feira. Elas vão para a escola, depois passeiam no parque e, em seguida, voltam para casa onde continuam o papo na varanda. Aninha observa as tias, escuta todas as conversas, ouvimos alguns pensamentos seus, mas ela quase não fala, embora tudo observe com seus olhos expressivos. Enquanto as tias conversam sobre o desejo que ambas têm de serem escritoras, Aninha pega um papel e, lembrando-se das coisas que ouviu ao longo do dia, começa a desenhar personagens e partes das histórias que escutou. As tias percebem e, sorrateiramente, se aproximam para observar. Então os desenhos ganham vida, e as tias visualizam as cenas que elas mesmas narraram ao longo do dia. A iniciativa da criança terá papel decisivo no caminho destas duas mulheres que sonham escrever seus livros.",
       imagem: getPosterUrl('uma-menina-duas-mulheres-muitas-historias', 0),
-    }
+      cameras: "",
+      som: "",
+      producao: "Antonio Carlos de Oliveira",
+      montagem: "",
+      edicao: "",
+      elenco: [],
+    },
+    {
+        slug: "ervas",
+        titulo: "ERVAS",
+        diretores: "Itajaci Rogério Amaral",
+        pais: "Duque de Caxias",
+        classificacao: "Livre",
+        youtubeId: "",
+        sinopse: "A linguagem estética do próprio cotidiano, a câmera interage com o interlocutor e a narrativa é decolonial onde mostra outras formas de conhecimentos de cura afro-indígenas ancestral, que resiste a industria farmacêutica e a busca eclética dessa cura com as ervas.",
+        imagem: getPosterUrl('ervas', 0),
+        cameras: "Nath Costa, Itajaci Rogério Amaral, Heliane Ferreira",
+        som: "Silene Orlando Ribeiro",
+        producao: "Silene Orlando Ribeiro, Itajaci Rogério Amaral, Heliane Ferreira; Filme produzido na Oficina \"Eaí, Vamos Fazer um Filme?\" realizada no Gomeia Galpão Criativo, em Duque de Caxias, Rio de Janeiro,  em outubro de 2022.Patrocínio da Secretaria de Estado de Cultura e Economia Criativa do Rio de Janeiro, através do edital Retomada Cultural 2. #SececRJ​ #CulturaPresente​ #retomadaculturalrj2​ ",
+        montagem: "Heraldo HB",
+        edicao: "",
+        elenco: [],
+      },
+      {
+        slug: "e-zoo",
+        titulo: "E-ZOO",
+        diretores: "",
+        pais: "Brasil",
+        classificacao: "Livre",
+        youtubeId: "",
+        sinopse: "",
+        imagem: getPosterUrl('e-zoo', 1),
+        cameras: "",
+        som: "",
+        producao: "",
+        montagem: "",
+        edicao: "",
+        elenco: [],
+      }
   ];
 }
