@@ -268,7 +268,7 @@ export async function getFilms(): Promise<Film[]> {
     {
       slug: "in-comodo",
       titulo: "IN CÔMODO",
-      diretores: "Débora Crusy",
+      diretores: "Uel Fragha, Débora Crusy",
       pais: "Duque de Caxias",
       classificacao: "14",
       youtubeId: "IqYtyl8157o",
