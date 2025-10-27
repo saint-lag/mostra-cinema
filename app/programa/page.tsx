@@ -61,7 +61,6 @@ export default async function ProgramaPage() {
                           <p className="text-sm text-gray-600">{sessao.sala} - {sessao.idioma}</p>
                         </div>
                         <div className="text-right">
-                          <p className="font-medium">{sessao.hora}</p>
                         </div>
                       </div>
                     </div>
