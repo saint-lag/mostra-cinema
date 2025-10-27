@@ -133,10 +133,6 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Direção:</span> {film.direcao}</p>
 ) : null}
 
-{film.pais ? (
-  <p><span className="font-semibold">País:</span> {film.pais}</p>
-) : null}
-
 {film.ano ? (
   <p><span className="font-semibold">Ano:</span> {film.ano}</p>
 ) : null}
