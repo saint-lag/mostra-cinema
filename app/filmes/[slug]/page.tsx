@@ -126,19 +126,18 @@ export default async function FilmPage(props: {
                 <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
               )}
               {filmFields.map(([key, label]) => {
-  const value = film[key];
+  const value = film[key as keyof Film];
 
   if (!value) return null;
 
-  // Se for array (ex: tags), mostra formatado
   const displayValue = Array.isArray(value) ? value.join(", ") : value;
 
   return (
     <p key={key}>
-      <span className="font-semibold">{label}:</span> {displayValue}
-    </p>
+      <span className="font-semibold">{label}:</span> {displayValue}</p>
   );
 })}
+
             </div>
             
             {film.tags?.length ? (
