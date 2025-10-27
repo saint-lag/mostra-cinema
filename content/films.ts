@@ -346,7 +346,6 @@ export async function getFilms(): Promise<Film[]> {
       montagem: "Guilherme Leopoldo",
       edicao: "",
       elenco: "Fernanda: Gabz, Sueli: Leticia Vieira, Garçom: Marcos Carneiro",
-      fotografia: "Macla Oliveira",
       arte: "Mariana Anddrade",
       distribuicao: "Luana Ferreira"
     },
