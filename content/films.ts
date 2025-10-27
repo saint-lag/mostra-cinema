@@ -19,7 +19,7 @@ let staticPosterUrls: PosterMap | null =
 export function getPosterUrl(filmId: string, index: number = 0): string | undefined {
   if (!staticPosterUrls) {
     throw new Error(
-      'Poster URLs não foram inicializadas durante a build. Execute `npm run build` para gerar o manifest, defina o token BLOB ou habilite SKIP_BLOB_FETCH=true durante o desenvolvimento.'
+      'Poster URLs não foram inicializadas durante a build... Execute `npm run build` para gerar o manifest, defina o token BLOB ou habilite SKIP_BLOB_FETCH=true durante o desenvolvimento.'
     );
   }
   return staticPosterUrls[filmId]?.[index];
