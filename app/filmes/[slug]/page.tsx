@@ -32,6 +32,46 @@ export default async function FilmPage(props: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await props.params;
+  const filmFields = [
+  ["diretores", "Diretores"],
+  ["direcao", "Direção"],
+  ["pais", "País"],
+  ["ano", "Ano"],
+  ["duracao", "Duração"],
+  ["sinopse", "Sinopse"],
+  ["imagem", "Imagem"],
+  ["classificacao", "Classificação"],
+  ["tags", "Tags"],
+  ["youtubeId", "YouTube ID"],
+  ["screeningAt", "Exibição"],
+  ["cameras", "Câmeras"],
+  ["som", "Som"],
+  ["trilha", "Trilha Sonora"],
+  ["producao", "Produção"],
+  ["montagem", "Montagem"],
+  ["edicao", "Edição"],
+  ["elenco", "Elenco"],
+  ["produtora", "Produtora"],
+  ["arte", "Arte"],
+  ["patrocinio", "Patrocínio"],
+  ["apoio", "Apoio"],
+  ["agradecimentos", "Agradecimentos"],
+  ["stil", "Still"],
+  ["makingOf", "Making Of"],
+  ["narracao", "Narração"],
+  ["animacao", "Animação"],
+  ["maquiagem", "Maquiagem"],
+  ["figurino", "Figurino"],
+  ["cenografia", "Cenografia"],
+  ["gaffer", "Gaffer"],
+  ["logger", "Logger"],
+  ["plato", "Platô"],
+  ["microfone", "Microfone"],
+  ["forografia", "Fotografia"], // parece um typo — deveria ser "fotografia"?
+  ["roteiro", "Roteiro"],
+  ["vfx", "VFX"],
+  ["distribuicao", "Distribuição"]
+];
   const films = await getFilms();
   const film = films.find((f) => f.slug === slug);
   if (!film) return notFound();
@@ -85,24 +125,20 @@ export default async function FilmPage(props: {
               {film.duracao && (
                 <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
               )}
-              {film.cameras ? (
-                <p><span className="font-semibold">Câmeras:</span> {film.cameras}</p>
-              ) : null}
-              {film.som ? (
-                <p><span className="font-semibold">Som:</span> {film.som}</p>
-              ) : null}
-              {film.producao ? (
-                <p><span className="font-semibold">Produção:</span> {film.producao}</p>
-              ) : null}
-              {film.montagem ? (
-                <p><span className="font-semibold">Montagem:</span> {film.montagem}</p>
-              ) : null}
-              {film.edicao ? (
-                <p><span className="font-semibold">Edição:</span> {film.edicao}</p>
-              ) : null}
-              {film.elenco && film.elenco.length ? (
-                <p><span className="font-semibold">Elenco:</span> {film.elenco.join(", ")}</p>
-              ) : null}
+              {filmFields.map(([key, label]) => {
+  const value = film[key];
+
+  if (!value) return null;
+
+  // Se for array (ex: tags), mostra formatado
+  const displayValue = Array.isArray(value) ? value.join(", ") : value;
+
+  return (
+    <p key={key}>
+      <span className="font-semibold">{label}:</span> {displayValue}
+    </p>
+  );
+})}
             </div>
             
             {film.tags?.length ? (
