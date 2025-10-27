@@ -125,18 +125,157 @@ export default async function FilmPage(props: {
               {film.duracao && (
                 <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
               )}
-              {filmFields.map(([key, label]) => {
-  const value = film[key as keyof Film];
+              {film.diretores ? (
+  <p><span className="font-semibold">Diretores:</span> {film.diretores}</p>
+) : null}
 
-  if (!value) return null;
+{film.direcao ? (
+  <p><span className="font-semibold">Direção:</span> {film.direcao}</p>
+) : null}
 
-  const displayValue = Array.isArray(value) ? value.join(", ") : value;
+{film.pais ? (
+  <p><span className="font-semibold">País:</span> {film.pais}</p>
+) : null}
 
-  return (
-    <p key={key}>
-      <span className="font-semibold">{label}:</span> {displayValue}</p>
-  );
-})}
+{film.ano ? (
+  <p><span className="font-semibold">Ano:</span> {film.ano}</p>
+) : null}
+
+{film.duracao ? (
+  <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
+) : null}
+
+{film.sinopse ? (
+  <p><span className="font-semibold">Sinopse:</span> {film.sinopse}</p>
+) : null}
+
+{film.imagem ? (
+  <p><span className="font-semibold">Imagem:</span> {film.imagem}</p>
+) : null}
+
+{film.classificacao ? (
+  <p><span className="font-semibold">Classificação:</span> {film.classificacao}</p>
+) : null}
+
+{film.tags ? (
+  <p><span className="font-semibold">Tags:</span> {film.tags.join(", ")}</p>
+) : null}
+
+{film.youtubeId ? (
+  <p><span className="font-semibold">YouTube ID:</span> {film.youtubeId}</p>
+) : null}
+
+{film.screeningAt ? (
+  <p><span className="font-semibold">Exibição:</span> {film.screeningAt}</p>
+) : null}
+
+{film.cameras ? (
+  <p><span className="font-semibold">Câmeras:</span> {film.cameras}</p>
+) : null}
+
+{film.som ? (
+  <p><span className="font-semibold">Som:</span> {film.som}</p>
+) : null}
+
+{film.trilha ? (
+  <p><span className="font-semibold">Trilha Sonora:</span> {film.trilha}</p>
+) : null}
+
+{film.producao ? (
+  <p><span className="font-semibold">Produção:</span> {film.producao}</p>
+) : null}
+
+{film.montagem ? (
+  <p><span className="font-semibold">Montagem:</span> {film.montagem}</p>
+) : null}
+
+{film.edicao ? (
+  <p><span className="font-semibold">Edição:</span> {film.edicao}</p>
+) : null}
+
+{film.elenco ? (
+  <p><span className="font-semibold">Elenco:</span> {film.elenco}</p>
+) : null}
+
+{film.produtora ? (
+  <p><span className="font-semibold">Produtora:</span> {film.produtora}</p>
+) : null}
+
+{film.arte ? (
+  <p><span className="font-semibold">Arte:</span> {film.arte}</p>
+) : null}
+
+{film.patrocinio ? (
+  <p><span className="font-semibold">Patrocínio:</span> {film.patrocinio}</p>
+) : null}
+
+{film.apoio ? (
+  <p><span className="font-semibold">Apoio:</span> {film.apoio}</p>
+) : null}
+
+{film.agradecimentos ? (
+  <p><span className="font-semibold">Agradecimentos:</span> {film.agradecimentos}</p>
+) : null}
+
+{film.stil ? (
+  <p><span className="font-semibold">Still:</span> {film.stil}</p>
+) : null}
+
+{film.makingOf ? (
+  <p><span className="font-semibold">Making Of:</span> {film.makingOf}</p>
+) : null}
+
+{film.narracao ? (
+  <p><span className="font-semibold">Narração:</span> {film.narracao}</p>
+) : null}
+
+{film.animacao ? (
+  <p><span className="font-semibold">Animação:</span> {film.animacao}</p>
+) : null}
+
+{film.maquiagem ? (
+  <p><span className="font-semibold">Maquiagem:</span> {film.maquiagem}</p>
+) : null}
+
+{film.figurino ? (
+  <p><span className="font-semibold">Figurino:</span> {film.figurino}</p>
+) : null}
+
+{film.cenografia ? (
+  <p><span className="font-semibold">Cenografia:</span> {film.cenografia}</p>
+) : null}
+
+{film.gaffer ? (
+  <p><span className="font-semibold">Gaffer:</span> {film.gaffer}</p>
+) : null}
+
+{film.logger ? (
+  <p><span className="font-semibold">Logger:</span> {film.logger}</p>
+) : null}
+
+{film.plato ? (
+  <p><span className="font-semibold">Platô:</span> {film.plato}</p>
+) : null}
+
+{film.microfone ? (
+  <p><span className="font-semibold">Microfone:</span> {film.microfone}</p>
+) : null}
+
+{film.fotografia ? (
+  <p><span className="font-semibold">Fotografia:</span> {film.fotografia}</p>
+) : null}
+
+{film.roteiro ? (
+  <p><span className="font-semibold">Roteiro:</span> {film.roteiro}</p>
+) : null}
+
+{film.vfx ? (
+  <p><span className="font-semibold">VFX:</span> {film.vfx}</p>
+) : null}
+
+{film.distribuicao ? (
+  <p><span className="font-semibold">Distribuição:</span> {film.distribuicao}</p>
+) : null}
 
             </div>
             
