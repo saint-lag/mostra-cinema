@@ -131,14 +131,7 @@ export default async function FilmPage(props: {
             ) : null}
           </div>
 
-          <a
-            href={`https://www.youtube-nocookie.com/watch?v=${film.youtubeId}`}
-            target="_blank"
-            rel="noreferrer"
-            className="block rounded-xl bg-cipo px-5 py-3 text-center text-sm font-medium text-white hover:bg-cipo/90 transition-colors"
-          >
-            Assistir no YouTube
-          </a>
+         
         </aside>
       </div>
     </main>
