@@ -119,7 +119,7 @@ export default async function FilmPage(props: {
               {film.direcao ?  (
                 <p><span className="font-semibold">Direção:</span> {film.direcao}</p>
               ): (
-                <p><span className="font-semibold">Direção:</span> {film.diretores}</p>}
+                <p><span className="font-semibold">Direção:</span> {film.diretores}</p>)}
               {film.pais && (
                 <p><span className="font-semibold">Distrito:</span> {film.pais}</p>
               )}
