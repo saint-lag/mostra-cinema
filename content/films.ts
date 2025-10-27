@@ -115,7 +115,7 @@ export type Film = {
   patrocinio?: string;
   apoio?: string;
   agradecimentos?: string;
-  stil?: string;
+  still?: string;
   makingOf?: string;
   narracao?: string;
   animacao?: string;
