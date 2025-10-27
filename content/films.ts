@@ -240,9 +240,8 @@ export async function getFilms(): Promise<Film[]> {
       producao: "William Lopes, Théo Costa, Danton Muniz, Fabio Ferreira de Moura, Kiko Haikal, George Silva de Souza",
       montagem: "Guilherme Leopoldo",
       edicao: "",
-      elenco: "",
+      elenco: "Entrevistados: Doné Conceição, Gaipê Renato de Odé, Ekedy Daniele de Freqüem, Ekedy Mônica de Nãnan",
       arte: "Natália Anjos e Luciana Leal",
-      entrevistados: "Doné Conceição, Gaipê Renato de Odé, Ekedy Daniele de Freqüem, Ekedy Mônica de Nãnan",
       agradecimentos: "Restaurante Amarelinho da Taquara"
     },
     {
