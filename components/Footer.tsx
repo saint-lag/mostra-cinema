@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-10 border-t border-lima/20 pt-6 text-center">
-          <p>© {new Date().getFullYear()} Mostra um Momento em Caxias — Exibição via YouTube.</p>
+          <p>© {new Date().getFullYear()} Mostra um Momento em Caxias</p>
         </div>
       </div>
     </footer>
