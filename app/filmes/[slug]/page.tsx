@@ -217,7 +217,7 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Agradecimentos:</span> {film.agradecimentos}</p>
 ) : null}
 
-{film.stil ? (
+{film.still ? (
   <p><span className="font-semibold">Still:</span> {film.stil}</p>
 ) : null}
 
