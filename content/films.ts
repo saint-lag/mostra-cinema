@@ -231,9 +231,7 @@ export async function getFilms(): Promise<Film[]> {
       pais: "Imbariê",
       classificacao: "Livre",
       youtubeId: "mZZyBnDBclA",
-      sinopse: "Em um poderoso testemunho de fé e resistência, o documentário narra a trajetória de Doné Conceição, líder espiritual de um terreiro profundamente marcado pela intolerância religiosa. Após anos enfrentando ataques e um incêndio que destruiu o local e apagou registros históricos, Doné e sua comunidade se veem obrigados a recomeçar. Por meio de relatos íntimos e emocionantes, frequentadores e filhos de santo relembram episódios de luta e superação, enquanto cenas observacionais e registros de arquivo revelam a beleza e a força de um espaço sagrado renascido.\nO documentário celebra os dez anos de resistência e resiliência de Doné Conceição, reforçando a importância da união, resiliência e luta contra o preconceito. Produzido da Oficina de Cinema da Escola Livre de Artes da Baixada Fluminense, realizada no Gomeia Galpão Criativo, dinamizada pelo Cineclube Mate Com Angu.
-#BaixadaFilma
-",
+      sinopse: "Em um poderoso testemunho de fé e resistência, o documentário narra a trajetória de Doné Conceição, líder espiritual de um terreiro profundamente marcado pela intolerância religiosa. Após anos enfrentando ataques e um incêndio que destruiu o local e apagou registros históricos, Doné e sua comunidade se veem obrigados a recomeçar. Por meio de relatos íntimos e emocionantes, frequentadores e filhos de santo relembram episódios de luta e superação, enquanto cenas observacionais e registros de arquivo revelam a beleza e a força de um espaço sagrado renascido.\nO documentário celebra os dez anos de resistência e resiliência de Doné Conceição, reforçando a importância da união, resiliência e luta contra o preconceito. Produzido da Oficina de Cinema da Escola Livre de Artes da Baixada Fluminense, realizada no Gomeia Galpão Criativo, dinamizada pelo Cineclube Mate Com Angu.#BaixadaFilma",
       imagem: getPosterUrl('done', 1),
       fotografia: "Rafaela Gomes",
       cameras: "Natália Anjos, Luciana Leal e Rafaela Gomes",
