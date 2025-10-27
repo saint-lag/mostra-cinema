@@ -10,17 +10,17 @@ import Footer from "@/components/Footer";
 const muro = localFont({
   src: [
     {
-      path: '../public/fonts/FuturaPt/Muro.otf',
+      path: '../public/fonts/Muro/Muro.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../public/fonts/FuturaPt/Muro.otf',
+      path: '../public/fonts/Muro/Muro.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/FuturaPt/Muro.otf',
+      path: '../public/fonts/Muro/Muro.otf',
       weight: '300',
       style: 'normal',
     },
