@@ -58,12 +58,10 @@ export default function SobrePage() {
               <h2 className="text-2xl font-bold text-terra mb-6 pb-2 border-b border-lima/30">
                 Sobre a Mostra
               </h2>
-              
               <p className="text-musgo mb-6 text-lg leading-relaxed">
                 A <strong className="font-semibold">Mostra Um Momento em Caxias</strong> é um espaço de celebração do cinema feito em Duque de Caxias. Criada com o intuito de valorizar a produção audiovisual local, a mostra reúne curtas-metragens realizados por artistas da região, destacando a diversidade de olhares, histórias e experiências que compõem a cena caxiense e a Baixada Fluminense.
 
               </p>
-              
               <p className="text-musgo mb-8">
                 Em sua edição de 2025, a mostra acontece nos dias 25 e 26 de outubro, às 17h, na sala do CPH, adjacente à Biblioteca Pública Ferreira Gullar, na Vila Nossa Senhora das Graças, em Xerém. O evento é gratuito e aberto a todos, promovendo o encontro entre realizadores e público, e fortalecendo o sentimento de pertencimento através da arte.
 
@@ -76,10 +74,6 @@ export default function SobrePage() {
                 A Mostra Um Momento em Caxias acredita no poder do audiovisual como ferramenta de memória, expressão e comunidade — um convite para viver, juntos, o cinema que nasce e se transforma em Caxias.
 
               </p>
-              
-              
-               
-              </div>
             </div>
           </div>
         </section>
@@ -99,7 +93,6 @@ export default function SobrePage() {
               <a href="mailto:mostramomento@gmail.com" className="bg-white text-musgo font-medium px-6 py-3 rounded-lg hover:bg-bebe transition-colors">
                 mostramomento@gmail.com
               </a>
-              
             </div>
           </div>
         </section>
