@@ -149,20 +149,9 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Sinopse:</span> {film.sinopse}</p>
 ) : null}
 
-{film.imagem ? (
-  <p><span className="font-semibold">Imagem:</span> {film.imagem}</p>
-) : null}
-
-{film.classificacao ? (
-  <p><span className="font-semibold">Classificação:</span> {film.classificacao}</p>
-) : null}
 
 {film.tags ? (
   <p><span className="font-semibold">Tags:</span> {film.tags.join(", ")}</p>
-) : null}
-
-{film.youtubeId ? (
-  <p><span className="font-semibold">YouTube ID:</span> {film.youtubeId}</p>
 ) : null}
 
 {film.screeningAt ? (
@@ -202,7 +191,7 @@ export default async function FilmPage(props: {
 ) : null}
 
 {film.arte ? (
-  <p><span className="font-semibold">Arte:</span> {film.arte}</p>
+  <p><span className="font-semibold">Direção de Arte:</span> {film.arte}</p>
 ) : null}
 
 {film.patrocinio ? (
