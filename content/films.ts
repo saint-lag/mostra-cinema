@@ -152,6 +152,8 @@ export type Film = {
   visagismo?: string;
   a_gaffer?: string; 
   coordenador?: string;
+  argumento?: string; 
+  sonoplastia?: string;
   DELETEME
   
 };
@@ -492,7 +494,7 @@ MasterClass com Rafael Dragaud….. Roteiro e Perspectivas de Mercado
       slug: "uma-menina-duas-mulheres-e-muitas-historias",
       titulo: "UMA MENINA DUAS MULHERES E MUITAS HISTÓRIAS",
       diretores: "Marcus Galiña",
-      direcao: "Mazo",
+      direcao: "",
       roteiro: "Cláudia Cruz, Cristina Santos e Marcus Galiña",
       pais: "Duque de Caxias",
       still: "Isis dos Anjos",
@@ -504,15 +506,17 @@ MasterClass com Rafael Dragaud….. Roteiro e Perspectivas de Mercado
       som: "Léo Fox",
       producao: "Antonio Carlos de Oliveira",
       montagem: "",
-      edicao: "Mazo",
-      elenco: "Ana Luiza, Intérprete de Libras: Thaís Helena M. Pereira",
+      edicao: "",
+      elenco: "",
+      outro: "Participação Oficial: Ana Luiza, Intérprete de Libras: Thaís Helena M. Pereira",
       animacao: "Allan Mordred",
-      trilha: "Estudio ARKA 399, Arranjos - Rick Souza, Percussão - Kbeça"
+      trilha: "Estudio ARKA 399, Arranjos - Rick Souza, Percussão - Kbeça, Direção e edição -  Mazo"
     },
     {
         slug: "ervas",
         titulo: "ERVAS",
         diretores: "Itajaci Rogério Amaral",
+        argumento: "Itajaci Rogério Amaral",
         pais: "Duque de Caxias",
         classificacao: "Livre",
         youtubeId: "_p9nX51XaDo",
@@ -520,7 +524,8 @@ MasterClass com Rafael Dragaud….. Roteiro e Perspectivas de Mercado
         imagem: getPosterUrl('ervas', 0),
         cameras: "Nath Costa, Itajaci Rogério Amaral, Heliane Ferreira",
         som: "Silene Orlando Ribeiro",
-        producao: "Silene Orlando Ribeiro, Itajaci Rogério Amaral, Heliane Ferreira; Filme produzido na Oficina \"Eaí, Vamos Fazer um Filme?\" realizada no Gomeia Galpão Criativo, em Duque de Caxias, Rio de Janeiro,  em outubro de 2022.Patrocínio da Secretaria de Estado de Cultura e Economia Criativa do Rio de Janeiro, através do edital Retomada Cultural 2. #SececRJ​ #CulturaPresente​ #retomadaculturalrj2​ ",
+        producao: "Silene Orlando Ribeiro, Itajaci Rogério Amaral, Heliane Ferreira",
+        outro: "Filme produzido na Oficina \"Eaí, Vamos Fazer um Filme?\" realizada no Gomeia Galpão Criativo, em Duque de Caxias, Rio de Janeiro,  em outubro de 2022.Patrocínio da Secretaria de Estado de Cultura e Economia Criativa do Rio de Janeiro, através do edital Retomada Cultural 2. #SececRJ​ #CulturaPresente​ #retomadaculturalrj2​ ",
         montagem: "Heraldo HB",
         edicao: "",
         elenco: "",
@@ -535,11 +540,12 @@ MasterClass com Rafael Dragaud….. Roteiro e Perspectivas de Mercado
         sinopse: "E-ZOO surge meses antes da pandemia 2020, durante a Crise da Geosmina que atingiu o estado do Rio de Janeiro. Um ser mutante vomitado pelo mar desperta em meio ao lixo. Ao perceber seu corpo completamente acoplado de plástico descartado, tenta se reconhecer e recuperar sua memória e sua alegria. Por quanto tempo esteve tão adormecido que tudo aquilo aconteceu? Como podemos sonhar e interpretar o futuro a partir do que temos hoje?",
         imagem: getPosterUrl('e-zoo', 1),
         cameras: "Karol Schittini, Rosa Maria Spínola, Joás Santos, Carolita Borba",
-        som: "Sami Kontola",
+        sonoplastia: "Sami Kontola",
         producao: "Tupiniquim Produções",
         montagem: "",
         edicao: "Joás Santos e Thiago Sobral",
-        elenco: "Vozes em Off das crianças: Clara Flor Maravilhas, Cléo Guzzo, Eloá  Longuinho, Erik Garcia, Ester Sobral, Helena Nunes, Violeta Nunes, Yuri Lagub",
+        elenco: "Karol Schittini",
+        outro: "Vozes em Off das crianças: Clara Flor Maravilhas, Cléo Guzzo, Eloá  Longuinho, Erik Garcia, Ester Sobral, Helena Nunes, Violeta Nunes, Yuri Lagub",
         trilha: "Ricardo D'Garcia"
       }
   ];
