@@ -141,6 +141,17 @@ export type Film = {
   ideia?: string; 
   motorista?: string; 
   alimentacao?: string;
+  audiovisual?: string; 
+  contraregra?: string;
+  caracterizacao?: string;
+  cor?: string;
+  lettering?: string; 
+  outro?: string;
+  finalizacaoImagem?: string;
+  finalizacaoSom?: string;
+  visagismo?: string;
+  a_gaffer?: string; 
+  coordenador?: string;
   DELETEME
   
 };
@@ -302,24 +313,27 @@ export async function getFilms(): Promise<Film[]> {
     {
       slug: "in-comodo",
       titulo: "IN CÔMODO",
-      diretores: "Uel Fragha, Débora Crusy",
+      diretores: "Débora Crusy",
       pais: "Duque de Caxias",
       classificacao: "14",
       youtubeId: "IqYtyl8157o",
       sinopse: "Um homem após 3 anos de Pandemia.  Vive suas angústias e traumas devido a covid 19.",
       imagem: getPosterUrl('in-comodo'),
       cameras: "",
+      audiovisual: "Patrick Lima",
       som: "Ray Amorim",
-      producao: "Patrick lima, Thais da Silva, Marilene Oliveira",
+      producao: "Thais da Silva",
+      contraregra: "Marilene Oliveira",
       montagem: "",
       edicao: "",
-      elenco: "",
+      elenco: "Uel Fragha",
       roteiro: "Uel Fragha"
     },
     {
       slug: "metaverso-em-desencanto",
       titulo: "METAVERSO EM DESENCANTO",
       diretores: "Diogo Brandão",
+      roteiro: "Diogo Brandão",
       pais: "Duque de Caxias",
       classificacao: "16",
       youtubeId: "g9nIQIDLvAA",
@@ -327,35 +341,50 @@ export async function getFilms(): Promise<Film[]> {
       imagem: getPosterUrl('metaverso-em-desencanto', 4),
       cameras: "Gabriel Guimarães",
       som: "Tiago Ribeiro, Éric Brandão",
-      producao: "Oficina do Diabo, Diogo Brandão, Sofia Süssekind",
+      producao: "Oficina do Diabo e Diogo Brandão",
+      a_producao: "Sofia Süssekind",
+      caracterizacao: "Sofia Süssekind", caracterizacao, cor, lettering, outro,
       montagem: "Felipe Monteiro",
+      cor: "Felipe Monteiro",
+      lettering: "Felipe Monteiro",
       edicao: "",
       elenco: "Beatriz Malecha, Felipe Fagundes, Rachel Enierre, Alexandre David, Diogo Brandão",
-      arte: "Diogo Brandão, Samuel Rufino, Victoria Rebuzzi",
+      arte: "Diogo Brandão e Samuel Rufino",
+      a_arte: "Victoria Rebuzzi",
       fotografia: "Eduardo Kurt",
       trilha: "Daniel Benflos",
       vfx: "Eduardo Kurt e Oficina do Diabo",
+      outro: "Faca “Leg Knife“/“Jambe” gentilmente cedida pelo artista plástico Jean-Marc Laroche",
       agradecimentos: "Colônia de Pescadores Z-13, localizada no Posto 6, ao lado do Forte de Copacabana pelo acolhimento"
     },
     {
       slug: "na-risca",
       titulo: "NA RISCA",
       diretores: "Mozá",
+      direcao: "Lara Mira",
       pais: "Xerém",
       classificacao: "Livre",
       youtubeId: "vrRyB-ikd8c",
       sinopse: "Traz a perspectiva de um jovem da Vila Canaã, Baixada Fluminense, sobre a sedução da barbearia em um cenário de vivência que flerta com o crime e as drogas. Como as barbearias podem impactar na sua vida e na vida dos jovens da sua comunidade?",
       imagem: getPosterUrl('na-risca', 2),
-      cameras: "Suzana Castro, João Queiroz",
-      som: "Arthur Gama, Daniel Jack Moraes",
-      producao: "Andressa Costa, Lara Mira",
+      fotografia: "Suzana Castro",
+      a_fotografia: "João Queiroz",
+      som: "Arthur Gama",
+      a_som: "Daniel Jack Moraes",
+      producao: "Andressa Costa",
+      a_producao: "Lara Mira",
       produtora: "EBAV",
       montagem: "Arthur Gama, Alehandro Duarte",
+      visagismo: "Mozá, Carolina Oliveira",
+      still: "Vitória Dias",
       edicao: "",
       elenco: "Michael Robson Coutinho dos Santos, Marllon Jefola, MC TH, Jonathan, Vital, João Victor Vieira (Jxao), Phelipe Cardoso, Fabiano Fernandes das Neves, Marcelo Andrade, Dinair Gomes, Sabat, Max dos Santos, José Fernando da Rocha, Marcia Sabatini da Rocha ",
       arte: "Greg",
+      plato: "Marcelo Andrade , Phelipe Cardoso, Fabiano Fernandes, João Victor Vieira, Jonathan Vital, Flávia Martins, Rodolfo Soares",
+      finalizacaoImagem: "ENILA",
+      finalizacaoSom: "Daniel Jack Moraes",
       roteiro: "Mozá, Andressa Costa, Arthur Gama, Suzana Castro, Greg",
-      trilha: "JXAO, Sabat",
+      trilha: "Música: JXAO, Fonograma/Beat: Sabat, Mozá",
       patrocinio: "EBAV, Instituto Zeca Pagodinho",
       apoio: "Isis Neta, Luciano Machado, Nova Canaã Material de Construção",
       agradecimentos: "Marcia Sabatini da Rocha, José Fernando da Rocha, Giovanni Sabatini da Rocha, Marlon Jefola, Carolina Oliveira, Mateus Alexis, Lucas Bittencourt, Marlene Bittencourt, Phelipe Cardoso, Luciano Machado, Elaine Pereira dos Santos, Canaan Burguer, Pablo Bittencourt, Marcelo Andrade, Phelipe Cardoso, Fabiano Fernandes, João Victor Vieira, Jonathan Vital",
@@ -366,17 +395,22 @@ export async function getFilms(): Promise<Film[]> {
       diretores: "Marina Maux",
       direcao: "Guilherme Leopoldo",
       pais: "Duque de Caxias",
-      gaffer: "Carol Brandão, Raíssa Nunes",
-      fotografia: "Gabriel Vitiello, Suzana Castro",
+      gaffer: "Carol Brandão",
+      a_gaffer: "Raíssa Nunes", 
+      coordenador: "Mica Lopes",
+      fotografia: "Gabriel Vitiello",
+      a_fotografia: "1° Gabriel Vitiello 2° Suzana Castro",
       still: "Vitória Santana",
       classificacao: "12",
       youtubeId: "-enK3Qm8bWw",
       sinopse: "Uma conversa entre duas mulheres se transforma em um mergulho nas complexidades do amor e do passado. Uma história íntima sobre encontros, despedidas e os sentimentos que permanecem.",
       imagem: getPosterUrl('sobre-nos', 2),
       cameras: "",
-      som: "Lucio Perpétuos, Victor Garcez",
+      som: "Lucio Perpétuos",
+      soundDesign: "Victor Garcez",
       producao: "Laura Gonna, Mica Lopes",
       montagem: "Guilherme Leopoldo",
+      finalizacao: "Guilherme Leopoldo",
       edicao: "",
       elenco: "Fernanda: Gabz, Sueli: Leticia Vieira, Garçom: Marcos Carneiro",
       arte: "Mariana Anddrade",
