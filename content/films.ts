@@ -107,6 +107,7 @@ export type Film = {
   som?: string;
   trilha?: string;
   producao?: string;
+  a_som?: string;
   montagem?: string;
   edicao?: string;
   elenco?: string;
