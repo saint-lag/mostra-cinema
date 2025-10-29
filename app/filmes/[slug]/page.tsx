@@ -130,17 +130,10 @@ export default async function FilmPage(props: {
               )}
              
 
-{film.ano ? (
-  <p><span className="font-semibold">Ano:</span> {film.ano}</p>
-) : null}
-
 {film.duracao ? (
   <p><span className="font-semibold">Duração:</span> {film.duracao}</p>
 ) : null}
 
-{film.sinopse ? (
-  <p><span className="font-semibold">Sinopse:</span> {film.sinopse}</p>
-) : null}
 
               {film.ideia ? (
   <p><span className="font-semibold">Ideia Original:</span> {film.ideia}</p>
