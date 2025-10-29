@@ -130,7 +130,22 @@ export type Film = {
   roteiro?: string;
   vfx?: string;
   distribuicao?: string;
+  a_producao?: string;
+  foley?: string;
+  produtora?: string;
+  comunicacao?: string;
+  a_arte?: string;
+  a_gaffer?: string;
+  a_producao?: string;
+  finalizacao?: string; 
+  ideia?: string; 
+  motorista?: string; 
+  alimentacao?: string;
+  DELETEME
+  
 };
+  DELETEME?
+  DELETEME
 
 // Função para obter os filmes com URLs dos posters
 export async function getFilms(): Promise<Film[]> {
@@ -147,13 +162,16 @@ export async function getFilms(): Promise<Film[]> {
       youtubeId: "TpZbGTo23go",
       sinopse: "Em um setor historicamente dominado por pessoas brancas, onde estão os profissionais negros do cinema? A Cor do Cinema é um testemunho emocionante da força transformadora das histórias que contamos e das pessoas extraordinárias que as tornam possíveis.",
       imagem: getPosterUrl('a-cor-do-cinema', 1),
-      cameras: "Jomboh e MaCla Oliveira",
+      cameras: "",
       som: "Italo Pereira",
-      producao: "Mica Lopes, Larissa Pereira, Gabrieli Oliveira",
+      producao: "Mica Lopes",
+      a_producao: "Larissa Pereira, Gabrieli Oliveira, com acompanhamento de Nicolas Leclercq",
+      fotografia: "Jomboh e MaCla Oliveira",
       montagem: "",
       edicao: "Vio Anchieta",
-      elenco: "Lais Fonseca, Marcilucy de Andrade, Vanessa Noronha, Yan Muniz, Maria Salles, Marina de Souza, Marcos Henrique Carneiro, Paulo Jorge Roque, Renan Nascimento, Samuel Araújo, Suelem dos Santos e Tainá de Almeida",
+      elenco: "Principal: Lais Fonseca, Marcilucy de Andrade, Vanessa Noronha, Yan Muniz; Secundário: Maria Salles, Marina de Souza, Marcos Henrique Carneiro, Paulo Jorge Roque, Renan Nascimento, Samuel Araújo, Suelem dos Santos e Tainá de Almeida",
       arte: "Ivy Magalhães",
+      comunicacao: "Maju Santos",
       still:"Pedro Couto",
       makingOf: "Rhayane Ramos",
       agradecimentos: "Ghetto Colletiv e Núcleo de Audiovisual (NUCA), Antonio Kuschnir, Guida, Ju Angelino, Ramon Lid e Vandl Art"
@@ -185,36 +203,46 @@ export async function getFilms(): Promise<Film[]> {
       sinopse: "As últimas cheias marcadas na parede medem a velocidade da vida. Lavando imagens e derretendo certezas.",
       imagem: getPosterUrl('cheia', 1),
       cameras: "",
-      som: "Hubert, WT",
-      producao: "Lucas Bonini, Isis Dequech, Garupa Filmes",
+      som: "Mixagem: Hubert",
+      producao: "Lucas Bonini",
+      a_producao: "Isis Dequech",
+      produtora: "Garupa Filmes",
       montagem: "Wayner Tristão",
       edicao: "",
       elenco: "",
+      foley: "WT",
+      comunicacao: "Vanessa Malheiros",
       narracao: "Vanessa Malheiros",
       trilha: "Lola Moore",
-      animacao: "Wayner Tristão e Savio Sena",
+      animacao: "Aquarelas: Wayner Tristão e Savio Sena",
     },
     {
       slug: "destino-tracado",
       titulo: "DESTINO TRAÇADO",
       diretores: "Caio Berc",
-      direcao: "Lucca Barata, Marcele Almeida, Cláudio Benites",
+      roteiro: "Caio Berc",
+      direcao: "1° Lucca Barata, 2° Marcele Almeida, 3° Cláudio Benites",
       pais: "Duque de Caxias",
       classificacao: "Livre",
       youtubeId: "mLD0eVmTcdU",
       sinopse: 'Mariana, uma jovem de 25 anos da Baixada Fluminense, vive uma rotina desgastante de currículos enviados e entrevistas sem sentido. Em meio à ansiedade e à pressão por "dar certo", ela sente que algo essencial está faltando — até que um sonho misterioso de sua avó, Dona Zelma, a leva até Mãe Tereza, uma taróloga cigana que vive em uma Kombi encantada.',
       imagem: getPosterUrl('destino'),
-      cameras: "Davi Torres, Gabriel Ferrão, Mayara Santos, Giovanna Sabino",
+      cameras: "Davi Torres",
+      fotografia: "Davi Torres",
+      a_fotografia: "1° Gabriel Ferrão, 2° Mayara Santos, 3° Giovanna Sabino",
       som: "Gabriel Crisóstomo",
       microfone: "Carla Nunes",
-      producao: "Nathallie Sabino, Levi Alves, Gleice Hellen, Nicolas Villela",
+      producao: "Nathallie Sabino",
+      a_producao: "1° Levi Alves, 2° Gleice Hellen, 3° Nicolas Villela",
       plato: "Mayra Vianna",
       montagem: "",
-      edicao: "",
+      edicao: "", 
       elenco: "Anna Moreira - Mariana, Aislann Sousa - Lucas, Ana Màrtins - Mãe Tereza, Eve Penha - Dona Zelma",
-      gaffer: "Ryan de Farias, Johnny Barbosa",
+      gaffer: "Ryan de Farias",
+      a_gaffer: "Johnny Barbosa",
       logger: "Daniel Mufasa",
-      arte: "Clara Castro Rosa, Manuela de Araújo, Jully Santana, Aline Lofrano",
+      arte: "Clara Castro Rosa",
+      a_arte: "1° Manuela de Araújo, 2° Jully Santana, 3° Aline Lofrano",
       cenografia: "Lucas Araújo",
       figurino: "Carol Coêlho",
       maquiagem: "Aline Lofrano / Taisa Alves",
@@ -227,6 +255,7 @@ export async function getFilms(): Promise<Film[]> {
       diretores: "Nil Mendonça e Alexy Eloi",
       direcao: "Théo Costa",
       roteiro: "Théo Costa e Nil Mendonça",
+      idea: "William Lopes",
       pais: "Imbariê",
       classificacao: "Livre",
       youtubeId: "mZZyBnDBclA",
@@ -236,12 +265,17 @@ export async function getFilms(): Promise<Film[]> {
       cameras: "Natália Anjos, Luciana Leal e Rafaela Gomes",
       som: "Alice Machado e Erick Siqueira",
       still: "Natália Anjos",
-      producao: "William Lopes, Théo Costa, Danton Muniz, Fabio Ferreira de Moura, Kiko Haikal, George Silva de Souza",
+      producao: "William Lopes e Théo Costa",
+      a_producao: "Danton Muniz",
+      pesquisa: "Nil Mendonça",
       montagem: "Guilherme Leopoldo",
+      finalizacao: "Guilherme Leopoldo", 
+      motorista: "Produção: Fabio Ferreira de Moura, Kiko Haikal, George Silva de Souza",
       edicao: "",
       elenco: "Entrevistados: Doné Conceição, Gaipê Renato de Odé, Ekedy Daniele de Freqüem, Ekedy Mônica de Nãnan",
       arte: "Natália Anjos e Luciana Leal",
-      agradecimentos: "Restaurante Amarelinho da Taquara"
+      agradecimentos: "",
+      alimentacao: "Restaurante Amarelinho da Taquara"
     },
     {
       slug: "em-nome-da-mae",
