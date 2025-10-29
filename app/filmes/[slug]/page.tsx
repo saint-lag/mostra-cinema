@@ -317,6 +317,9 @@ export default async function FilmPage(props: {
 {film.fotografia ? (
   <p><span className="font-semibold">Fotografia:</span> {film.fotografia}</p>
 ) : null}
+              {film.a_fotografia ? (
+  <p><span className="font-semibold">Assistentes de Fotografia:</span> {film.a_fotografia}</p>
+) : null}
 
 {film.roteiro ? (
   <p><span className="font-semibold">Roteiro:</span> {film.roteiro}</p>
