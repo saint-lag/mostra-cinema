@@ -133,7 +133,6 @@ export type Film = {
   distribuicao?: string;
   a_producao?: string;
   foley?: string;
-  produtora?: string;
   comunicacao?: string;
   a_arte?: string;
   a_gaffer?: string;
