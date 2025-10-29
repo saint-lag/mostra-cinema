@@ -156,12 +156,9 @@ export type Film = {
   sonoplastia?: string;
   figurantes?: string;
   pesquisa?: string;
-  soundDesign?: string;
-  DELETEME
-  
+  soundDesign?: string;  
 };
-  DELETEME?
-  DELETEME
+  
 
 // Função para obter os filmes com URLs dos posters
 export async function getFilms(): Promise<Film[]> {
