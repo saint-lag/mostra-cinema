@@ -420,7 +420,7 @@ export async function getFilms(): Promise<Film[]> {
       slug: "tempestade-de-mentiras",
       titulo: "TEMPESTADE DE MENTIRAS",
       diretores: "Angela Santos",
-      direcao: "Flávia Santos, Victor Manuel",
+      direcao: "1° Flávia Santos, 2° Victor Manuel",
       pais: "Duque de Caxias",
       classificacao: "Livre",
       youtubeId: "TyVbPVXBSyw",
@@ -428,18 +428,65 @@ export async function getFilms(): Promise<Film[]> {
       imagem: getPosterUrl('tempestade', 1),
       cameras: "",
       som: "Andressa Costa, Erick Siqueira, Vito Besouro",
-      producao: "Flávia Santos, Itajací Araújo, Fabio Ferreira de Moura",
+      producao: "Flávia Santos, Itajací Araújo",
       montagem: "Higor Cabral",
-      edicao: "",
-      elenco: "Sílvia de Mendonça - Sebastiana, Nill Mendonça - Lindaura, Rui Santos - Aroldo, Vito Besouro - Assessor, Erick Siqueira - Feirante, Adrian Gabriel - João, Marina Mendonça - Amiga do João, Figurantes: Danilo Moraes, Lucilene Ferreira, Rafaela Gomes",
-      roteiro: "Angela Santos, Luciana Leal, Vanusa Silva, Flávia Santos",
+      finalizacao: "Higor Cabral",
+      edicao: "", figurantes, pesquisa,
+      elenco: "Sílvia de Mendonça - Sebastiana, Nill Mendonça - Lindaura, Rui Santos - Aroldo, Vito Besouro - Assessor, Erick Siqueira - Feirante, Adrian Gabriel - João, Marina Mendonça - Amiga do João",
+      figurantes: "Danilo Moraes, Lucilene Ferreira, Rafaela Gomes",
+      roteiro: "Angela Santos, Luciana Leal, Vanusa Silva, Flávia Santos, com contribuição de Itajací Araújo",
+      pesquisa: "Angela Santos, Luciana Leal, Vanusa Silva, Flávia Santos",
       fotografia: "Letícia Batista",
       still: "Gabriel Cortes",
-      arte: "Luciana Leal, Vanusa Silva",
+      arte: "Luciana Leal",
+      a_arte: "Vanusa Silva",
       figurino: "Vanusa Silva, Luciana Leal",
-      trilha: "Maria Rita - Santa Chuva", 
-      agradecimentos: "Baianas Bar, João da banca de temperos, Trabalhadores da Feira de Caxias, Azim Moollan e Rafael Mazza",
-      apoio: "Espiralar Filmes"
+      trilha: "Maria Rita - Santa Chuva, Compositor: Marcelo Camelo",
+      alimentacao: "Baianas Bar",
+      motorista: "Produção: Fabio Ferreira de Moura",
+      agradecimentos: "João da banca de temperos, Trabalhadores da Feira de Caxias, Azim Moollan e Rafael Mazza",
+      apoio: "Espiralar Filmes",
+      outro: `EQUIPE ELAdaBF 
+
+
+Coordenação Geral e Executiva
+Clara de Deus
+
+Coordenação Audiovisual (Cineclube Mate Com Angu)
+Anne Santos, Heraldo HB, Igor Barradas, Luisa Pitanga
+
+Coordenação Pedagógica 
+Bruno Alarcon, Eduardo Prates, Luiz Fernando Picanço 
+
+Produção 
+Lucilene Ferreira 
+Nil Mendonça
+
+Designer Gráfico 
+André Prestor
+Tatch Pereira
+
+Making of
+Levi Meirelles
+
+
+
+EDUCADORES
+
+Anele Rodrigues……..Produção
+Anne Santos………….Som
+Getúlio Ribeiro……….Direção de Arte
+Igor Barradas…………Direção
+Igor Cabral……………  Fotografia
+Luisa Pitanga…………Antropologia Visual
+Manaíra Carneiro…… Roteiro
+Maria Clara……………Foto Still
+Muriel Alves…………..Documentário
+
+Oficina de acessibilidade, com Renata Silêncio
+
+MasterClass com Rafael Dragaud….. Roteiro e Perspectivas de Mercado
+`
     },
     {
       slug: "uma-menina-duas-mulheres-e-muitas-historias",
