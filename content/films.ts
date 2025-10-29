@@ -136,7 +136,6 @@ export type Film = {
   comunicacao?: string;
   a_arte?: string;
   a_gaffer?: string;
-  a_producao?: string;
   finalizacao?: string; 
   ideia?: string; 
   motorista?: string; 
