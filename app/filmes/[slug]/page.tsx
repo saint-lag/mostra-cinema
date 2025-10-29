@@ -119,7 +119,7 @@ export default async function FilmPage(props: {
 {film.diretores && (
                 <p><span className="font-semibold">Direção:</span> {film.diretores}</p>)}
               {film.direcao ?  (
-                <p><span className="font-semibold">Assistência de Direção:</span> {film.direcao}</p>
+                <p><span className="font-semibold">Assistentes de Direção:</span> {film.direcao}</p>
               ): null }
 
               {film.pais && (
@@ -142,7 +142,18 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Sinopse:</span> {film.sinopse}</p>
 ) : null}
 
+              {film.ideia ? (
+  <p><span className="font-semibold">Ideia Original:</span> {film.ideia}</p>
+) : null}
 
+              {film.argumento ? (
+  <p><span className="font-semibold">Argumento:</span> {film.argumento}</p>
+) : null}
+
+              {film.pesquisa ? (
+  <p><span className="font-semibold">Pesquisa:</span> {film.pesquisa}</p>
+) : null}
+              
 {film.cameras ? (
   <p><span className="font-semibold">Câmeras:</span> {film.cameras}</p>
 ) : null}
@@ -151,16 +162,70 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Som:</span> {film.som}</p>
 ) : null}
 
+{film.a_som ? (
+  <p><span className="font-semibold">Assistentes de Som:</span> {film.a_som}</p>
+) : null}
+
+              {film.foley ? (
+  <p><span className="font-semibold">Foley:</span> {film.foley}</p>
+) : null}
+              {film.soundDesign ? (
+  <p><span className="font-semibold">Sound Design:</span> {film.soundDesign}</p>
+) : null}
+
+              {film.sonoplastia ? (
+  <p><span className="font-semibold">Sonoplastia:</span> {film.sonoplastia}</p>
+) : null}
+
+
+              
 {film.trilha ? (
   <p><span className="font-semibold">Trilha Sonora:</span> {film.trilha}</p>
 ) : null}
-
+              
 {film.producao ? (
   <p><span className="font-semibold">Produção:</span> {film.producao}</p>
 ) : null}
 
+              {film.a_producao ? (
+  <p><span className="font-semibold">Assistentes de Produção:</span> {film.a_producao}</p>
+) : null}
+
+{film.coordenador ? (
+  <p><span className="font-semibold">Coordenador:</span> {film.coordenador}</p>
+) : null}
+
+              {film.audiovisual ? (
+  <p><span className="font-semibold">Produção Audiovisual:</span> {film.audiovisual}</p>
+) : null}
+
 {film.montagem ? (
   <p><span className="font-semibold">Montagem:</span> {film.montagem}</p>
+) : null}
+
+              {film.visagismo ? (
+  <p><span className="font-semibold">Visagismo:</span> {film.visagismo}</p>
+) : null}
+              {film.cor ? (
+  <p><span className="font-semibold">Cor:</span> {film.cor}</p>
+) : null}
+
+              {film.lettering ? (
+  <p><span className="font-semibold">Lettering:</span> {film.lettering}</p>
+) : null}
+
+              {film.comunicacao ? (
+  <p><span className="font-semibold">Comunicação:</span> {film.comunicacao}</p>
+) : null}
+
+{film.finalizacao ? (
+  <p><span className="font-semibold">Finalização:</span> {film.finalizacao}</p>
+) : null}
+              {film.finalizacaoImagem ? (
+  <p><span className="font-semibold">Finalização de Imagem:</span> {film.finalizacaoImagem}</p>
+) : null}
+              {film.finalizacaoSom ? (
+  <p><span className="font-semibold">Finalização de Som:</span> {film.finalizacaoSom}</p>
 ) : null}
 
 {film.edicao ? (
@@ -171,12 +236,26 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Elenco:</span> {film.elenco}</p>
 ) : null}
 
+{film.figurantes ? (
+  <p><span className="font-semibold">Figurantes:</span> {film.figurantes}</p>
+) : null}
+
 {film.produtora ? (
   <p><span className="font-semibold">Produtora:</span> {film.produtora}</p>
 ) : null}
 
 {film.arte ? (
   <p><span className="font-semibold">Direção de Arte:</span> {film.arte}</p>
+) : null}
+              {film.a_arte ? (
+  <p><span className="font-semibold">Assistentes de Arte:</span> {film.a_arte}</p>
+) : null}
+
+              {film.caracterizacao ? (
+  <p><span className="font-semibold">Caracterização:</span> {film.caracterizacao}</p>
+) : null}
+              {film.contraregra ? (
+  <p><span className="font-semibold">Contrarregra:</span> {film.contraregra}</p>
 ) : null}
 
 {film.patrocinio ? (
@@ -187,9 +266,6 @@ export default async function FilmPage(props: {
   <p><span className="font-semibold">Apoio:</span> {film.apoio}</p>
 ) : null}
 
-{film.agradecimentos ? (
-  <p><span className="font-semibold">Agradecimentos:</span> {film.agradecimentos}</p>
-) : null}
 
 {film.still ? (
   <p><span className="font-semibold">Still:</span> {film.still}</p>
@@ -222,6 +298,9 @@ export default async function FilmPage(props: {
 {film.gaffer ? (
   <p><span className="font-semibold">Gaffer:</span> {film.gaffer}</p>
 ) : null}
+              {film.a_gaffer ? (
+  <p><span className="font-semibold">Assistentes de Gaffer:</span> {film.a_gaffer}</p>
+) : null}
 
 {film.logger ? (
   <p><span className="font-semibold">Logger:</span> {film.logger}</p>
@@ -249,6 +328,23 @@ export default async function FilmPage(props: {
 
 {film.distribuicao ? (
   <p><span className="font-semibold">Distribuição:</span> {film.distribuicao}</p>
+) : null}
+
+              {film.motorista ? (
+  <p><span className="font-semibold">Motorista (Produção):</span> {film.motorista}</p>
+) : null}
+
+              {film.alimentacao ? (
+  <p><span className="font-semibold">Alimentação:</span> {film.alimentacao}</p>
+) : null}
+
+
+
+              {film.outro ? (
+  <p><span className="font-semibold"></span> {film.outro}</p>
+) : null}
+            {film.agradecimentos ? (
+  <p><span className="font-semibold">Agradecimentos:</span> {film.agradecimentos}</p>
 ) : null}
 
             </div>
