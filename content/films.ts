@@ -268,7 +268,7 @@ export async function getFilms(): Promise<Film[]> {
       diretores: "Nil Mendonça e Alexy Eloi",
       direcao: "Théo Costa",
       roteiro: "Théo Costa e Nil Mendonça",
-      idea: "William Lopes",
+      ideia: "William Lopes",
       pais: "Imbariê",
       classificacao: "Livre",
       youtubeId: "mZZyBnDBclA",
