@@ -154,6 +154,8 @@ export type Film = {
   coordenador?: string;
   argumento?: string; 
   sonoplastia?: string;
+  figurantes?: string;
+  pesquisa?: string;
   DELETEME
   
 };
@@ -433,7 +435,7 @@ export async function getFilms(): Promise<Film[]> {
       producao: "Flávia Santos, Itajací Araújo",
       montagem: "Higor Cabral",
       finalizacao: "Higor Cabral",
-      edicao: "", figurantes, pesquisa,
+      edicao: "", 
       elenco: "Sílvia de Mendonça - Sebastiana, Nill Mendonça - Lindaura, Rui Santos - Aroldo, Vito Besouro - Assessor, Erick Siqueira - Feirante, Adrian Gabriel - João, Marina Mendonça - Amiga do João",
       figurantes: "Danilo Moraes, Lucilene Ferreira, Rafaela Gomes",
       roteiro: "Angela Santos, Luciana Leal, Vanusa Silva, Flávia Santos, com contribuição de Itajací Araújo",
