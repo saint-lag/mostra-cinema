@@ -156,6 +156,7 @@ export type Film = {
   sonoplastia?: string;
   figurantes?: string;
   pesquisa?: string;
+  soundDesign?: string;
   DELETEME
   
 };
