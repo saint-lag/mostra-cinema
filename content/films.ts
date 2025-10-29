@@ -345,7 +345,7 @@ export async function getFilms(): Promise<Film[]> {
       som: "Tiago Ribeiro, Éric Brandão",
       producao: "Oficina do Diabo e Diogo Brandão",
       a_producao: "Sofia Süssekind",
-      caracterizacao: "Sofia Süssekind", caracterizacao, cor, lettering, outro,
+      caracterizacao: "Sofia Süssekind",
       montagem: "Felipe Monteiro",
       cor: "Felipe Monteiro",
       lettering: "Felipe Monteiro",
