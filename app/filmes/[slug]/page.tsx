@@ -84,7 +84,7 @@ export default async function FilmPage(props: {
         {/* Coluna principal: player / imagem */}
         <div className="md:col-span-2">
           <div className="rounded-xl bg-lima/10 p-4">
-            <VideoEmbed youtubeId={film.youtubeId} title={film.titulo} />
+            {/* <VideoEmbed youtubeId={film.youtubeId} title={film.titulo} /> */}
           </div>
           {film.sinopse ? (
             <section className="mt-8">
